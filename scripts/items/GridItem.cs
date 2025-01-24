@@ -4,6 +4,7 @@ using System;
 public partial class GridItem : Node2D
 {
 	public int BasePointsOnTrigger = 1;
+	public float Multiplier = 1f;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -17,8 +18,15 @@ public partial class GridItem : Node2D
 
 	public virtual void Trigger(Bubble bubble)
 	{
-		GameManager.Instance.AddPoints(BasePointsOnTrigger);
+		var points = (int)(BasePointsOnTrigger * Multiplier);
+		GameManager.Instance.AddPoints(points);
+
+		//spawn point label
+		var obj = new FlyingPointsLabel();
+		GetWindow().AddChild(obj);
+		obj.Init(points, GlobalPosition);
+
 		//Add velocity to bubble
 		//bubble.AngularVelocity = 
-	}	
+	}
 }
