@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuhuxmip7xd0w"]
+
+[ext_resource type="Texture2D" uid="uid://7krdj8whj54v" path="res://sprites/BoxUI-uncommon.png" id="1_aobis"]
+[ext_resource type="Texture2D" uid="uid://bvctoxcgccpk3" path="res://sprites/ItemSlot.png" id="2_o1luy"]
+[ext_resource type="Texture2D" uid="uid://bjh6vu2lv17gc" path="res://sprites/BoxUI-transparent.png" id="3_nrwjh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j6i0x"]
+font_size = 31
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cr78o"]
+font_size = 57
+
+[node name="ItemCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -852.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardBackground" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(300, 400)
+texture = ExtResource("1_aobis")
+region_rect = Rect2(1, 1, 125, 125)
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+
+[node name="ItemNameLabel" type="Label" parent="CardBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 21.0
+offset_right = 130.0
+offset_bottom = 88.0
+grow_horizontal = 2
+text = "TestName123456"
+label_settings = SubResource("LabelSettings_j6i0x")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ItemIcon" type="TextureRect" parent="CardBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 110.0
+offset_bottom = 158.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_o1luy")
+
+[node name="DescriptionBackground" type="NinePatchRect" parent="CardBackground"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -190.0
+offset_right = 934.0
+offset_bottom = 502.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_nrwjh")
+region_rect = Rect2(2, 2, 122, 122)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="DescriptionLabel" type="Label" parent="CardBackground/DescriptionBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -514.0
+offset_top = 20.0
+offset_right = 514.0
+offset_bottom = 672.0
+grow_horizontal = 2
+text = "This Item description is just for the purpose of showing how much information can be put into this box of Doom. Not the actual game \"Doom\" but the Doom in the literary sense, the one that has all those bad things associated with it... you know what i meant and oh this is the end..."
+label_settings = SubResource("LabelSettings_cr78o")
+autowrap_mode = 3
+max_lines_visible = 8
