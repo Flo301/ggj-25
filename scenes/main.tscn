@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=4 format=3 uid="uid://u575fnqn6unq"]
 
 [ext_resource type="PackedScene" uid="uid://cbpjuo50qu72e" path="res://scenes/ItemSlot.tscn" id="1_mevl5"]
+[ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="PackedScene" uid="uid://bwrj0etoxak8d" path="res://scenes/Bubble.tscn" id="2_6hccx"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
+script = ExtResource("1_ro3y3")
+
+[node name="PointLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 462.0
+offset_top = -399.0
+offset_right = 504.0
+offset_bottom = -376.0
+text = "100 P"
+horizontal_alignment = 1
 
 [node name="Line_0" type="Node2D" parent="."]
 
