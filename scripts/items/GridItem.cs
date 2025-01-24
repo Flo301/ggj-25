@@ -3,8 +3,12 @@ using System;
 
 public partial class GridItem : Node2D
 {
-	public int BasePointsOnTrigger = 1;
-	public float Multiplier = 1f;
+	[Export]
+	protected float MultiplierIncreasePerRound = 0.0f;
+	[Export]
+	protected int BasePointsOnTrigger = 1;
+	[Export]
+	protected float Multiplier = 1f;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,5 +32,10 @@ public partial class GridItem : Node2D
 
 		//Add velocity to bubble
 		//bubble.AngularVelocity = 
+	}
+
+	public virtual void OnRoundEnd()
+	{
+		Multiplier += MultiplierIncreasePerRound;
 	}
 }

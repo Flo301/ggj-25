@@ -152,7 +152,7 @@ position = Vector2(460, -410)
 zoom = Vector2(0.5, 0.5)
 
 [node name="Bubble" parent="." instance=ExtResource("2_6hccx")]
-position = Vector2(295, 163)
+position = Vector2(1000, 150)
 
 [node name="Bubble2" parent="." instance=ExtResource("2_6hccx")]
-position = Vector2(596, 160)
+position = Vector2(636, 170)
