@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6poifdonmfsg"
-path="res://.godot/imported/BoxUI-common.png-058bd5863d0cfa39142ff181557afc6c.ctex"
+uid="uid://7krdj8whj54v"
+path="res://.godot/imported/BoxUI-uncommon.png-903d44ee2d6ed77c83c25e964f8e3226.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/BoxUI-common.png"
-dest_files=["res://.godot/imported/BoxUI-common.png-058bd5863d0cfa39142ff181557afc6c.ctex"]
+source_file="res://sprites/BoxUI/BoxUI-uncommon.png"
+dest_files=["res://.godot/imported/BoxUI-uncommon.png-903d44ee2d6ed77c83c25e964f8e3226.ctex"]
 
 [params]
 
