@@ -23,7 +23,6 @@ offset_bottom = -248.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5mpk2")
-Rarity = "common"
 
 [node name="CardBackground" type="NinePatchRect" parent="."]
 unique_name_in_owner = true

@@ -32,13 +32,12 @@ DescriptionText = "Bei kontakt wird die Blase platzen."
 [node name="ItemCard2" parent="ItemSelectContainer" instance=ExtResource("1_indxl")]
 layout_mode = 2
 Icon = ExtResource("2_50oj6")
-Rarity = "legendary"
+Rarity = 4
 NameText = "Alge"
 DescriptionText = "Steigert jede runde die anzahl der Punkte die von der Blase bei kontakt gesammelt wird."
 
 [node name="ItemCard3" parent="ItemSelectContainer" instance=ExtResource("1_indxl")]
 layout_mode = 2
 Icon = ExtResource("2_50oj6")
-Rarity = "uncommon"
 NameText = "Flipper"
 DescriptionText = "Schlägt die Blase in eine richtung."

@@ -7,8 +7,8 @@ public partial class ItemCard : Control
 	public Texture2D Icon;
 	private TextureRect IconRect;
 	
-	[Export(PropertyHint.Enum, "common,uncommon,rare,epic,legendary")]
-	public string Rarity;
+	[Export]
+	public ERarity Rarity = ERarity.COMMON;
 	
 	//[Export]
 	//public Texture2D CardBackground;
@@ -31,7 +31,7 @@ public partial class ItemCard : Control
 		DescriptionLabel = GetNode<Label>("%DescriptionLabel");
 		
 		IconRect.Texture = Icon;
-		CardBackgroundRect.Texture = (Texture2D)GD.Load("res://sprites/BoxUI/BoxUI-" + Rarity + ".png");
+		CardBackgroundRect.Texture = (Texture2D)GD.Load("res://sprites/BoxUI/BoxUI-" + Rarity.ToString().ToLower() + ".png");
 		NameLabel.Text = NameText;
 		DescriptionLabel.Text = DescriptionText;
 	}
