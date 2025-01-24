@@ -1,3 +1,142 @@
-[gd_scene format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=3 format=3 uid="uid://u575fnqn6unq"]
+
+[ext_resource type="PackedScene" uid="uid://cbpjuo50qu72e" path="res://scenes/ItemSlot.tscn" id="1_mevl5"]
+[ext_resource type="PackedScene" uid="uid://bwrj0etoxak8d" path="res://scenes/Bubble.tscn" id="2_6hccx"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Line_0" type="Node2D" parent="."]
+
+[node name="ItemSlot" parent="Line_0" instance=ExtResource("1_mevl5")]
+
+[node name="ItemSlot2" parent="Line_0" instance=ExtResource("1_mevl5")]
+position = Vector2(100, 0)
+
+[node name="ItemSlot3" parent="Line_0" instance=ExtResource("1_mevl5")]
+position = Vector2(200, 0)
+
+[node name="ItemSlot4" parent="Line_0" instance=ExtResource("1_mevl5")]
+position = Vector2(300, 0)
+
+[node name="ItemSlot5" parent="Line_0" instance=ExtResource("1_mevl5")]
+position = Vector2(400, 0)
+
+[node name="ItemSlot6" parent="Line_0" instance=ExtResource("1_mevl5")]
+position = Vector2(500, 0)
+
+[node name="ItemSlot7" parent="Line_0" instance=ExtResource("1_mevl5")]
+position = Vector2(600, 0)
+
+[node name="ItemSlot8" parent="Line_0" instance=ExtResource("1_mevl5")]
+position = Vector2(700, 0)
+
+[node name="ItemSlot9" parent="Line_0" instance=ExtResource("1_mevl5")]
+position = Vector2(800, 0)
+
+[node name="ItemSlot10" parent="Line_0" instance=ExtResource("1_mevl5")]
+position = Vector2(900, 0)
+
+[node name="Line_1" type="Node2D" parent="."]
+position = Vector2(50, -100)
+
+[node name="ItemSlot" parent="Line_1" instance=ExtResource("1_mevl5")]
+
+[node name="ItemSlot2" parent="Line_1" instance=ExtResource("1_mevl5")]
+position = Vector2(100, 0)
+
+[node name="ItemSlot3" parent="Line_1" instance=ExtResource("1_mevl5")]
+position = Vector2(200, 0)
+
+[node name="ItemSlot4" parent="Line_1" instance=ExtResource("1_mevl5")]
+position = Vector2(300, 0)
+
+[node name="ItemSlot5" parent="Line_1" instance=ExtResource("1_mevl5")]
+position = Vector2(400, 0)
+
+[node name="ItemSlot6" parent="Line_1" instance=ExtResource("1_mevl5")]
+position = Vector2(500, 0)
+
+[node name="ItemSlot7" parent="Line_1" instance=ExtResource("1_mevl5")]
+position = Vector2(600, 0)
+
+[node name="ItemSlot8" parent="Line_1" instance=ExtResource("1_mevl5")]
+position = Vector2(700, 0)
+
+[node name="ItemSlot9" parent="Line_1" instance=ExtResource("1_mevl5")]
+position = Vector2(800, 0)
+
+[node name="ItemSlot10" parent="Line_1" instance=ExtResource("1_mevl5")]
+position = Vector2(900, 0)
+
+[node name="Line_2" type="Node2D" parent="."]
+position = Vector2(0, -200)
+
+[node name="ItemSlot" parent="Line_2" instance=ExtResource("1_mevl5")]
+
+[node name="ItemSlot2" parent="Line_2" instance=ExtResource("1_mevl5")]
+position = Vector2(100, 0)
+
+[node name="ItemSlot3" parent="Line_2" instance=ExtResource("1_mevl5")]
+position = Vector2(200, 0)
+
+[node name="ItemSlot4" parent="Line_2" instance=ExtResource("1_mevl5")]
+position = Vector2(300, 0)
+
+[node name="ItemSlot5" parent="Line_2" instance=ExtResource("1_mevl5")]
+position = Vector2(400, 0)
+
+[node name="ItemSlot6" parent="Line_2" instance=ExtResource("1_mevl5")]
+position = Vector2(500, 0)
+
+[node name="ItemSlot7" parent="Line_2" instance=ExtResource("1_mevl5")]
+position = Vector2(600, 0)
+
+[node name="ItemSlot8" parent="Line_2" instance=ExtResource("1_mevl5")]
+position = Vector2(700, 0)
+
+[node name="ItemSlot9" parent="Line_2" instance=ExtResource("1_mevl5")]
+position = Vector2(800, 0)
+
+[node name="ItemSlot10" parent="Line_2" instance=ExtResource("1_mevl5")]
+position = Vector2(900, 0)
+
+[node name="Line_3" type="Node2D" parent="."]
+position = Vector2(50, -300)
+
+[node name="ItemSlot" parent="Line_3" instance=ExtResource("1_mevl5")]
+
+[node name="ItemSlot2" parent="Line_3" instance=ExtResource("1_mevl5")]
+position = Vector2(100, 0)
+
+[node name="ItemSlot3" parent="Line_3" instance=ExtResource("1_mevl5")]
+position = Vector2(200, 0)
+
+[node name="ItemSlot4" parent="Line_3" instance=ExtResource("1_mevl5")]
+position = Vector2(300, 0)
+
+[node name="ItemSlot5" parent="Line_3" instance=ExtResource("1_mevl5")]
+position = Vector2(400, 0)
+
+[node name="ItemSlot6" parent="Line_3" instance=ExtResource("1_mevl5")]
+position = Vector2(500, 0)
+
+[node name="ItemSlot7" parent="Line_3" instance=ExtResource("1_mevl5")]
+position = Vector2(600, 0)
+
+[node name="ItemSlot8" parent="Line_3" instance=ExtResource("1_mevl5")]
+position = Vector2(700, 0)
+
+[node name="ItemSlot9" parent="Line_3" instance=ExtResource("1_mevl5")]
+position = Vector2(800, 0)
+
+[node name="ItemSlot10" parent="Line_3" instance=ExtResource("1_mevl5")]
+position = Vector2(900, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(466, -102)
+
+[node name="Buuble" parent="." instance=ExtResource("2_6hccx")]
+position = Vector2(360, 134)
+
+[node name="Buuble2" parent="." instance=ExtResource("2_6hccx")]
+position = Vector2(648, 153)
