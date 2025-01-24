@@ -12,4 +12,14 @@ public partial class Bubble : RigidBody2D
 	public override void _Process(double delta)
 	{
 	}
+
+	private void OnCollide(Node node)
+	{
+		GD.Print(Name + " collide with " + node.Name);
+		var item = node as GridItem;
+		if(item != null)
+		{
+			item.Trigger(this);
+		}
+	}
 }

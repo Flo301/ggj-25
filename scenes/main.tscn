@@ -1,19 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=5 format=3 uid="uid://u575fnqn6unq"]
 
-[ext_resource type="PackedScene" uid="uid://cbpjuo50qu72e" path="res://scenes/ItemSlot.tscn" id="1_mevl5"]
+[ext_resource type="PackedScene" uid="uid://cbpjuo50qu72e" path="res://scenes/GridItem.tscn" id="1_mevl5"]
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="PackedScene" uid="uid://by1vuvdghlhku" path="res://scenes/Bubble.tscn" id="2_6hccx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
+font_size = 60
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ro3y3")
 
 [node name="PointLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 478.0
-offset_top = -1005.0
-offset_right = 520.0
-offset_bottom = -982.0
+offset_left = 390.0
+offset_top = -1013.0
+offset_right = 545.0
+offset_bottom = -930.0
 text = "100 P"
+label_settings = SubResource("LabelSettings_0lfbj")
 horizontal_alignment = 1
 
 [node name="Line_0" type="Node2D" parent="."]

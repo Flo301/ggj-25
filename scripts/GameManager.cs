@@ -32,6 +32,7 @@ public partial class GameManager : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		AddPoints(1);
+		//DEBUG POINTS
+		//AddPoints(1);
 	}
 }

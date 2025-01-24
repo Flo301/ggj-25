@@ -1,21 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbpjuo50qu72e"]
 
-[ext_resource type="Script" path="res://scripts/ItemSlot.cs" id="1_oifoe"]
+[ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="1_oifoe"]
 [ext_resource type="Texture2D" uid="uid://bvctoxcgccpk3" path="res://sprites/ItemSlot.png" id="1_tpp6m"]
 [ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="2_ytui1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
 radius = 15.0
 
-[node name="ItemSlot" type="Node2D"]
+[node name="ItemSlot" type="StaticBody2D"]
+physics_material_override = ExtResource("2_ytui1")
 script = ExtResource("1_oifoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_duixi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_tpp6m")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-physics_material_override = ExtResource("2_ytui1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("CircleShape2D_duixi")
