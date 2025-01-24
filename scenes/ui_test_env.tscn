@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpbqj8qei5pu8"]
+
+[ext_resource type="Texture2D" uid="uid://c2oalybnjdkiu" path="res://sprites/BoxUI.png" id="1_ikawq"]
+[ext_resource type="Texture2D" uid="uid://nxqhkrsmrme6" path="res://sprites/Bubble.png" id="2_xacc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vpopo"]
+radius = 9.65
+
+[node name="UITestEnv" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 36.0
+offset_right = 72.0
+offset_bottom = 78.0
+scale = Vector2(1, 0.981)
+texture = ExtResource("1_ikawq")
+region_rect = Rect2(1, 1, 61, 61)
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
+shape = SubResource("CircleShape2D_vpopo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/RigidBody2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_xacc4")

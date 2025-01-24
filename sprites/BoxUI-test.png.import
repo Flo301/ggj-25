@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://bnqr0mq4u7rn5"
-=======
-uid="uid://nxqhkrsmrme6"
->>>>>>> Stashed changes
-path="res://.godot/imported/Bubble.png-9713246e3390cc8d923274b0c906226a.ctex"
+uid="uid://dtioi57h6ncfk"
+path="res://.godot/imported/BoxUI-test.png-e3345bdbc3290a0ed99ad2f881b76fed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Bubble.png"
-dest_files=["res://.godot/imported/Bubble.png-9713246e3390cc8d923274b0c906226a.ctex"]
+source_file="res://sprites/BoxUI-test.png"
+dest_files=["res://.godot/imported/BoxUI-test.png-e3345bdbc3290a0ed99ad2f881b76fed.ctex"]
 
 [params]
 
