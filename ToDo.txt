@@ -1,0 +1,52 @@
+GRID
+[F] ItemSlots
+[ ] Arena
+[ ] Main Szene vorbereiten
+
+BLASE
+[F] game engine physics
+[ ] Blase als Spieler platzieren
+[F] eigene physics
+
+ITEMS
+[ ] Flipper
+[ ] Alge
+[ ] Stachelkugel
+[ ] Spawner
+[ ] Item auf Itemslot platzieren
+
+[ ] Auswahlmenü
+ * Auswahlkarten
+ * Wähle zwischen 3? Random Itemsbasis
+ * Wähle zwischen 2? Upgrades
+
+[ ] Gameloop
+ 1) Itemauswahl
+ 2) Item platzieren
+ 3) Blase startet
+ 4) Blase simulation
+
+ART
+[R] Auswahlkarten
+[R] V1_Items
+[R] ItemSlots
+[R] Bubble
+[R] Hintergrund
+
+[ ] Upgrades
+ * Gamechanging Zustand den man dauerhaft behält
+ * extra Bubbles
+ * Globaler Punktemultiplikator
+
+[ ] Stages
+ * alle X Runden
+ * Punkte check
+ * nach jeder Stage gibt es ein Upgrade
+
+Gamedesign
+[ ] more Items
+=> bubble Zustände:
+ * eingefroren, um einmal nicht zerstört zu werden
+=> synagien zwischen Items (boosts) oder bubble zustände
+=> bubble trägt etwas zu einen anderen Item oder aus der Arena
+=> Zeitmanipulation
