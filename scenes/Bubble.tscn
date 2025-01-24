@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwrj0etoxak8d"]
+[gd_scene load_steps=5 format=3 uid="uid://by1vuvdghlhku"]
 
-[ext_resource type="Texture2D" uid="uid://bnqr0mq4u7rn5" path="res://sprites/Bubble.png" id="1_30raj"]
+[ext_resource type="Texture2D" uid="uid://cduvig6kw8bag" path="res://sprites/Bubble.png" id="1_30raj"]
 [ext_resource type="PhysicsMaterial" uid="uid://braimlq3wtusm" path="res://physics/BubblePhysics.tres" id="1_w4jot"]
 [ext_resource type="Script" path="res://scripts/Bubble.cs" id="2_jb2p5"]
 
@@ -14,6 +14,7 @@ gravity_scale = -0.3
 script = ExtResource("2_jb2p5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.78, 0.78)
 texture = ExtResource("1_30raj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
