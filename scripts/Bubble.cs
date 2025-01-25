@@ -6,11 +6,7 @@ public partial class Bubble : RigidBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		BubbleManager.Instance.AddBubble(this);
 	}
 
 	private void OnCollide(Node node)
@@ -23,9 +19,9 @@ public partial class Bubble : RigidBody2D
 		}
 	}
 
-	public new void QueueFree()
+	public void Destroy()
 	{
-		GameManager.Instance.OnBubbleRemove(this);
-		base.QueueFree();
+		BubbleManager.Instance.RemoveBubble(this);
+		QueueFree();
 	}
 }

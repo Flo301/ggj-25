@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Collections.Generic;
 
 public partial class GameManager : Node
 {
@@ -18,82 +17,38 @@ public partial class GameManager : Node
 
 		PointLabel = GetNode<Label>("%PointLabel");
 		AddPoints(0);
-		
+
 		//ToDo: Start with Random Item
-		SpawnBubbles();
-		//GetRandomItem();
+		BubbleManager.Instance.SpawnBubbles();
+		ItemManager.Instance.GetRandomItem();
 	}
 	#endregion
-
-	//SETTINGS
-	private int BubbleAmountPerRound = 1;
-	[Export]
-	private PackedScene BubbleScene;
 
 	//NODES
 	private Label PointLabel;
 
 	//PROPERTIES
-	private EGameState State = EGameState.PlaceItem;
+	private bool IsRoundActive = false;
 	private int Points = 0;
 	private int Round = 0;
-	private List<Bubble> ActiveBubbles = new List<Bubble>();
-	private List<GridItem> ActiveItems = new List<GridItem>();
 
-	public void GetRandomItem()
+	public void StartNextRound()
 	{
-		//ToDo: Roll random items
-		//ToDo: Open item selection
+		IsRoundActive = true;
+		BubbleManager.Instance.SpawnBubbles();
 	}
 
-	public void OnItemPlace(GridItem item)
-	{
-		ActiveItems.Add(item);
-
-		//ToDo: check if further items musst be choosen with item selection
-		SpawnBubbles();
-	}
-
-	public void SpawnBubbles()
-	{
-		State = EGameState.PlayBubble;
-
-		//Spawn bubble at random place
-		for (int i = 0; i < BubbleAmountPerRound; i++)
-		{
-			Bubble bubble = BubbleScene.Instantiate<Bubble>();
-			//ToDo: Get better grid based random spawnpoint (don't use the same twice)
-			bubble.GlobalPosition = new Vector2(new Random().Next(0, 900), 150);
-			ActiveBubbles.Add(bubble);
-			AddChild(bubble);
-		}
-	}
-
-	public void OnBubbleRemove(Bubble bubble)
-	{
-		ActiveBubbles.Remove(bubble);
-		if (ActiveBubbles.Count == 0)
-		{
-			OnRoundEnd();
-		}
-	}
-
-	private void OnRoundEnd()
+	public void OnRoundEnd()
 	{
 		Round++;
-		ActiveItems.ForEach(x => x.OnRoundEnd());
-		GetRandomItem();
+		IsRoundActive = false;
+		ItemManager.Instance.OnRoundEnd();
+		ItemManager.Instance.GetRandomItem();
 	}
 
 	public void AddPoints(int amount)
 	{
 		Points += amount;
 		PointLabel.Text = Points + "P";
-	}
-
-	enum EGameState
-	{
-		PlaceItem,
-		PlayBubble
 	}
 }

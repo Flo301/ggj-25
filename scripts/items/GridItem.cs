@@ -4,25 +4,33 @@ using System;
 public partial class GridItem : Node2D
 {
 	[Export]
-	protected float MultiplierIncreasePerRound = 0.0f;
+	public float MultiplierIncreasePerRound { get; protected set; } = 0.0f;
 	[Export]
-	protected int BasePointsOnTrigger = 1;
+	public int BasePointsOnTrigger { get; protected set; } = 1;
 	[Export]
-	protected float Multiplier = 1f;
+	public float Multiplier { get; protected set; } = 1f;
 	[Export]
-	protected bool ConsumeBubble = false;
+	public bool ConsumeBubble { get; protected set; } = false;
 	[Export]
-	protected ERarity Rarity = ERarity.COMMON;
+	public ERarity Rarity { get; protected set; } = ERarity.COMMON;
 	[Export]
-	protected string Description = "";
+	public string Description { get; protected set; } = "";
 
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
+    // Called when the node enters the scene tree for the first time.
+    public override void _EnterTree()
+    {
+		ItemManager.Instance.AddItem(this);
+		base._EnterTree();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+    public override void _ExitTree()
+    {
+		ItemManager.Instance.RemoveItem(this);
+        base._ExitTree();
+    }
+
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
 	{
 	}
 
@@ -39,7 +47,7 @@ public partial class GridItem : Node2D
 		//consume bubble
 		if (ConsumeBubble)
 		{
-			bubble.QueueFree();
+			bubble.Destroy();
 		}
 
 		//Add velocity to bubble
