@@ -1,61 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm5c85nyjwdr6"]
+[gd_scene load_steps=4 format=3 uid="uid://dm5c85nyjwdr6"]
 
 [ext_resource type="PackedScene" uid="uid://cuhuxmip7xd0w" path="res://scenes/item_card.tscn" id="1_1an72"]
-[ext_resource type="Script" path="res://scenes/CardSelector.cs" id="1_6mk3h"]
-[ext_resource type="Texture2D" uid="uid://bvctoxcgccpk3" path="res://sprites/ItemSlot.png" id="2_bade7"]
+[ext_resource type="Script" path="res://scripts/CardSelector.cs" id="1_6mk3h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e3ldf"]
 font_size = 67
 
 [node name="CardSelector" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -648.0
+offset_right = 1152.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_6mk3h")
+ItemCardScene = ExtResource("1_1an72")
 
-[node name="ItemSelectContainer" type="BoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 55.0
-offset_top = 110.0
-offset_right = 1055.0
-offset_bottom = 510.0
-grow_horizontal = 2
-theme_override_constants/separation = 50
+[node name="SceneContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/separation = 40
 alignment = 1
+vertical = true
 
-[node name="ItemCard" parent="ItemSelectContainer" instance=ExtResource("1_1an72")]
+[node name="Label" type="Label" parent="SceneContainer"]
 layout_mode = 2
-Icon = ExtResource("2_bade7")
-NameText = "Sea Urchin"
-DescriptionText = "Pops the Bubble on contact."
-
-[node name="ItemCard2" parent="ItemSelectContainer" instance=ExtResource("1_1an72")]
-layout_mode = 2
-Icon = ExtResource("2_bade7")
-Rarity = 4
-NameText = "Algae"
-DescriptionText = "Every Round it increses its value."
-
-[node name="ItemCard3" parent="ItemSelectContainer" instance=ExtResource("1_1an72")]
-layout_mode = 2
-Icon = ExtResource("2_bade7")
-NameText = "Flipper"
-DescriptionText = "Hits the Bubble back down."
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 261.5
-offset_right = 850.5
-offset_bottom = 92.0
-grow_horizontal = 2
 text = "Choose your Path:"
 label_settings = SubResource("LabelSettings_e3ldf")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ItemSelectHContainer" type="BoxContainer" parent="SceneContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1

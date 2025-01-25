@@ -12,6 +12,7 @@ physics_material_override = ExtResource("1_j63tu")
 script = ExtResource("2_nlnev")
 MultiplierIncreasePerRound = 0.1
 BasePointsOnTrigger = 10
+Rarity = 2
 Description = "10P when triggert, Multiplier increases 10% each round"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

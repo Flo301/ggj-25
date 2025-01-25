@@ -10,7 +10,7 @@ font_size = 31
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cr78o"]
-font_size = 57
+font_size = 70
 
 [node name="ItemCard" type="Control"]
 custom_minimum_size = Vector2(300, 400)
@@ -105,3 +105,5 @@ text = "..."
 label_settings = SubResource("LabelSettings_cr78o")
 autowrap_mode = 3
 max_lines_visible = 8
+
+[connection signal="gui_input" from="." to="." method="OnCardSelect"]

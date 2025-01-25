@@ -34,6 +34,10 @@ public partial class ItemManager : Node
 
 		//ToDo: Open item selection
 		GD.Print(string.Join(",", rngItems.Select(x => x.ResourcePath)));
+		PackedScene SelectorScene = GD.Load<PackedScene>("res://scenes/CardSelector.tscn");
+		CardSelector Selector = SelectorScene.Instantiate<CardSelector>();
+		AddChild(Selector);
+		Selector.SetRandomItems(rngItems);
 	}
 
 	public void AddItem(GridItem item)

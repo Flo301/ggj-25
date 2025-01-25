@@ -22,6 +22,11 @@ public partial class ItemCard : Control
 	public string DescriptionText;
 	private Label DescriptionLabel;
 	
+	[Export]
+	public string ScenePath;
+	
+	public CardSelector Parent;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -41,9 +46,13 @@ public partial class ItemCard : Control
 	{
 	}
 	
-	public void OnMouseClick()
+	public void OnCardSelect(InputEvent Event)
 	{
+		if(Event is InputEventAction EventAction)
+		{
+			GD.Print("CLICK" + EventAction);
 		//Send Item to CardSelector
-		
+		Parent.OnCardSelected(ScenePath);
+		}
 	}
 }
