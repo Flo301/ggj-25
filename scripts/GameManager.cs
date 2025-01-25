@@ -20,8 +20,6 @@ public partial class GameManager : Node
 		Round = 0;
 		AddPoints(0);
 
-		//ToDo: Start with Random Item
-		BubbleManager.Instance.SpawnBubbles();
 		ItemManager.Instance.GetRandomItem();
 	}
 	#endregion
@@ -38,6 +36,7 @@ public partial class GameManager : Node
 
 	public void StartNextRound()
 	{
+		GD.Print("OnRoundStart");
 		Round++;
 		IsRoundActive = true;
 		BubbleManager.Instance.SpawnBubbles();
@@ -45,6 +44,7 @@ public partial class GameManager : Node
 
 	public void OnRoundEnd()
 	{
+		GD.Print("OnRoundEnd");
 		IsRoundActive = false;
 		ItemManager.Instance.OnRoundEnd();
 		ItemManager.Instance.GetRandomItem();

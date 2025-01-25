@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm5c85nyjwdr6"]
+[gd_scene load_steps=4 format=3 uid="uid://db2y5hn1smqd8"]
 
 [ext_resource type="PackedScene" uid="uid://cuhuxmip7xd0w" path="res://scenes/item_card.tscn" id="1_1an72"]
 [ext_resource type="Script" path="res://scripts/CardSelector.cs" id="1_6mk3h"]
@@ -7,6 +7,7 @@
 font_size = 67
 
 [node name="CardSelector" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0

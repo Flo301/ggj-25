@@ -17,7 +17,7 @@ font_size = 60
 
 [node name="ItemManager" type="Node" parent="."]
 script = ExtResource("5_6rv6y")
-AvailableItems = Array[PackedScene]([ExtResource("3_ft2sf"), ExtResource("3_w2vqd")])
+AvailableItems = Array[PackedScene]([ExtResource("3_ft2sf"), ExtResource("3_w2vqd"), ExtResource("9_56iii")])
 
 [node name="BubbleManager" type="Node" parent="."]
 script = ExtResource("6_e4227")

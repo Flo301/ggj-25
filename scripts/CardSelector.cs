@@ -9,8 +9,7 @@ public partial class CardSelector : Control
 	public PackedScene ItemCardScene;
 	public PackedScene ItemScenes;
 	public BoxContainer CardContainer;
-	static public CardSelector Instance {get; private set;}
-	
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -19,32 +18,45 @@ public partial class CardSelector : Control
 		//Initialise Scenes
 		//Show CardSelector
 	}
-	
-	public void SetRandomItems(IEnumerable<Godot.PackedScene> ItemScenes)
+
+	public override void _Process(double delta)
 	{
-		GD.Print(string.Join(",", ItemScenes.Select(x => x.ResourcePath)));
-		foreach(PackedScene Item in ItemScenes)
+		base._Process(delta);
+		if (CurrentItemToPlace != null)
 		{
-			ItemCard Card = ItemCardScene.Instantiate<ItemCard>();
-			GridItem ItemInstance = Item.Instantiate<GridItem>();
-			//Card.Icon = Item.Icon;
-			Card.Rarity = ItemInstance.Rarity;
-			Card.NameText = ItemInstance.Name;
-			Card.DescriptionText = ItemInstance.Description;
-			Card.ScenePath = Item.ResourcePath;
-			Card.Parent = Instance;
-			CardContainer.AddChild(Card);
+			CurrentItemToPlace.GlobalPosition = GetGlobalMousePosition();
+
+			if(Input.IsMouseButtonPressed(MouseButton.Left))
+			{
+				OnPlacement();
+			}
 		}
 	}
-	
-	public void OnCardSelected(string ScenePath)
+
+	public void SetRandomItems(IEnumerable<PackedScene> ItemScenes)
 	{
+		foreach (PackedScene Item in ItemScenes)
+		{
+			ItemCard Card = ItemCardScene.Instantiate<ItemCard>();
+			CardContainer.AddChild(Card);
+
+			Card.Init(this, Item);
+		}
+	}
+
+	private GridItem CurrentItemToPlace;
+	public void OnCardSelected(PackedScene selectedItem)
+	{
+		GD.Print("choose: " + selectedItem.ResourcePath);
+
+		CurrentItemToPlace = selectedItem.Instantiate<GridItem>();
+		GetWindow().AddChild(CurrentItemToPlace);
 		//Item or Relic?
-		
+
 		// --- ITEMS ---
-		CardContainer.Visible = false;
+		this.Visible = false;
 		//Hide CardSelector
-		
+
 		//LeftClick to place
 		//RightClick to cancel
 		// - Unhide ItemSelector
@@ -53,20 +65,24 @@ public partial class CardSelector : Control
 		//Add Relic to Relics
 		//Destroy CardSelector
 	}
-	
-	public void OnPlacement(Node GridItem)
+
+	public void OnPlacement()
 	{
 		//Check if Valid
-		//Destroy CardSelector
+
 		//Destroy ItemSlot
 		//Spawn Item
+
+		ItemManager.Instance.ItemPlaced(CurrentItemToPlace);
+		CurrentItemToPlace = null;
+
+		//Destroy CardSelector
+		QueueFree();
 	}
-	
+
 	public void OnPlacementCanceled()
 	{
 		CardContainer.Visible = true;
 		//Unhide CardSelector
 	}
-	
-
 }
