@@ -28,6 +28,13 @@ public partial class CardSelector : Control
 
 			if(Input.IsMouseButtonPressed(MouseButton.Left))
 			{
+				//Get Nearest ItemSlot and replace
+				var SelectedGridItem = ItemManager.Instance.GetNearestItem(GetGlobalMousePosition(), CurrentItemToPlace);
+				GD.Print("SelectedGridItem: " + SelectedGridItem.Name);
+				CurrentItemToPlace.GlobalPosition = SelectedGridItem.GlobalPosition;
+				GD.Print("SelectedGridItemPosition: " + SelectedGridItem.GlobalPosition);
+				SelectedGridItem.GetParent().AddChild(CurrentItemToPlace);
+				SelectedGridItem.QueueFree();
 				OnPlacement();
 			}
 		}
@@ -85,4 +92,6 @@ public partial class CardSelector : Control
 		CardContainer.Visible = true;
 		//Unhide CardSelector
 	}
+	
+	
 }

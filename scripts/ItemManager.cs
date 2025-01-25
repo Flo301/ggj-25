@@ -60,4 +60,9 @@ public partial class ItemManager : Node
 	{
 		ActiveItems.ForEach(x => x.OnRoundEnd());
 	}
+	
+	public GridItem GetNearestItem(Godot.Vector2 pos, GridItem self)
+	{
+		return ActiveItems.Where(x => x != self ).OrderBy(x => x.GlobalPosition.DistanceTo(pos)).FirstOrDefault();
+	}
 }
