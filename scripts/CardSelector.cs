@@ -33,7 +33,7 @@ public partial class CardSelector : Control
 				GD.Print("SelectedGridItem: " + SelectedGridItem.Name);
 				CurrentItemToPlace.GlobalPosition = SelectedGridItem.GlobalPosition;
 				GD.Print("SelectedGridItemPosition: " + SelectedGridItem.GlobalPosition);
-				SelectedGridItem.GetParent().Reparent(CurrentItemToPlace);
+				CurrentItemToPlace.Reparent(SelectedGridItem.GetParent());
 				SelectedGridItem.QueueFree();
 				OnPlacement();
 			} 
