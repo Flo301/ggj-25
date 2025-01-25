@@ -10,6 +10,9 @@ radius = 15.0
 [node name="GridItem_Alge" type="StaticBody2D"]
 physics_material_override = ExtResource("1_j63tu")
 script = ExtResource("2_nlnev")
+MultiplierIncreasePerRound = 0.1
+BasePointsOnTrigger = 10
+Description = "10P when triggert, Multiplier increases 10% each round"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_duixi")

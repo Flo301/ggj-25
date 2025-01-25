@@ -1,21 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=6 format=3 uid="uid://u575fnqn6unq"]
 
 [ext_resource type="PackedScene" uid="uid://cbpjuo50qu72e" path="res://scenes/GridItem.tscn" id="1_mevl5"]
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="PackedScene" uid="uid://by1vuvdghlhku" path="res://scenes/Bubble.tscn" id="2_6hccx"]
+[ext_resource type="PackedScene" uid="uid://dbixmhvql664m" path="res://scenes/items/Alge.tscn" id="3_ft2sf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
 font_size = 60
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ro3y3")
+BubbleScene = ExtResource("2_6hccx")
 
 [node name="PointLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 390.0
-offset_top = -1013.0
-offset_right = 545.0
-offset_bottom = -930.0
+offset_left = 422.0
+offset_top = -686.0
+offset_right = 577.0
+offset_bottom = -603.0
 text = "100 P"
 label_settings = SubResource("LabelSettings_0lfbj")
 horizontal_alignment = 1
@@ -65,7 +67,7 @@ position = Vector2(200, 0)
 [node name="ItemSlot4" parent="Line_1" instance=ExtResource("1_mevl5")]
 position = Vector2(300, 0)
 
-[node name="ItemSlot5" parent="Line_1" instance=ExtResource("1_mevl5")]
+[node name="GridItem_Alge" parent="Line_1" instance=ExtResource("3_ft2sf")]
 position = Vector2(400, 0)
 
 [node name="ItemSlot6" parent="Line_1" instance=ExtResource("1_mevl5")]
@@ -148,11 +150,5 @@ position = Vector2(800, 0)
 position = Vector2(900, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(460, -410)
-zoom = Vector2(0.5, 0.5)
-
-[node name="Bubble" parent="." instance=ExtResource("2_6hccx")]
-position = Vector2(1000, 150)
-
-[node name="Bubble2" parent="." instance=ExtResource("2_6hccx")]
-position = Vector2(636, 170)
+position = Vector2(492, -231)
+zoom = Vector2(0.7, 0.7)

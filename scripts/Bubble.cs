@@ -22,4 +22,10 @@ public partial class Bubble : RigidBody2D
 			item.Trigger(this);
 		}
 	}
+
+	public new void QueueFree()
+	{
+		GameManager.Instance.OnBubbleRemove(this);
+		base.QueueFree();
+	}
 }

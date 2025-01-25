@@ -9,6 +9,12 @@ public partial class GridItem : Node2D
 	protected int BasePointsOnTrigger = 1;
 	[Export]
 	protected float Multiplier = 1f;
+	[Export]
+	protected bool ConsumeBubble = false;
+	[Export]
+	protected ERarity Rarity = ERarity.COMMON;
+	[Export]
+	protected string Description = "";
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -29,6 +35,12 @@ public partial class GridItem : Node2D
 		var obj = new FlyingPointsLabel();
 		GetWindow().AddChild(obj);
 		obj.Init(points, GlobalPosition);
+
+		//consume bubble
+		if (ConsumeBubble)
+		{
+			bubble.QueueFree();
+		}
 
 		//Add velocity to bubble
 		//bubble.AngularVelocity = 

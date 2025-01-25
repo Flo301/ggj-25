@@ -18,12 +18,17 @@ public partial class GameManager : Node
 
 		PointLabel = GetNode<Label>("%PointLabel");
 		AddPoints(0);
-		GetRandomItem();
+		
+		//ToDo: Start with Random Item
+		SpawnBubbles();
+		//GetRandomItem();
 	}
 	#endregion
 
 	//SETTINGS
 	private int BubbleAmountPerRound = 1;
+	[Export]
+	private PackedScene BubbleScene;
 
 	//NODES
 	private Label PointLabel;
@@ -56,11 +61,11 @@ public partial class GameManager : Node
 		//Spawn bubble at random place
 		for (int i = 0; i < BubbleAmountPerRound; i++)
 		{
-			var bubble = new Bubble();
+			Bubble bubble = BubbleScene.Instantiate<Bubble>();
 			//ToDo: Get better grid based random spawnpoint (don't use the same twice)
 			bubble.GlobalPosition = new Vector2(new Random().Next(0, 900), 150);
 			ActiveBubbles.Add(bubble);
-			GetWindow().AddChild(bubble);
+			AddChild(bubble);
 		}
 	}
 
