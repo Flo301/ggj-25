@@ -17,6 +17,7 @@ public partial class GameManager : Node
 
 		PointLabel = GetNode<Label>("%PointLabel");
 		RoundLabel = GetNode<Label>("%RoundLabel");
+		OnStartSoundPlayer = GetNode<AudioStreamPlayer2D>("%RoundStartPlayer");
 		Round = 0;
 		AddPoints(0);
 
@@ -27,6 +28,7 @@ public partial class GameManager : Node
 	//NODES
 	private Label PointLabel;
 	private Label RoundLabel;
+	private AudioStreamPlayer2D OnStartSoundPlayer;
 
 	//PROPERTIES
 	private bool IsRoundActive = false;
@@ -40,6 +42,7 @@ public partial class GameManager : Node
 		Round++;
 		IsRoundActive = true;
 		BubbleManager.Instance.SpawnBubbles();
+		OnStartSoundPlayer.Play();
 	}
 
 	public void OnRoundEnd()

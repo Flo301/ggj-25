@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=12 format=3 uid="uid://u575fnqn6unq"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="PackedScene" uid="uid://by1vuvdghlhku" path="res://scenes/Bubble.tscn" id="2_6hccx"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://5x62wyftl1c3" path="res://music/UnderwaterV4.wav" id="8_shmiq"]
 [ext_resource type="PackedScene" uid="uid://beh66r501sri7" path="res://scenes/items/BubbleSpawner.tscn" id="9_56iii"]
 [ext_resource type="PackedScene" uid="uid://ccrt46uw47b13" path="res://scenes/arena/arena_1.tscn" id="9_hl561"]
+[ext_resource type="AudioStream" uid="uid://wb68apal1s4f" path="res://sounds/bubbles.mp3" id="9_swlcw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
 font_size = 60
@@ -54,5 +55,9 @@ horizontal_alignment = 1
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_shmiq")
 autoplay = true
+
+[node name="RoundStartPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_swlcw")
 
 [node name="Arena1" parent="." instance=ExtResource("9_hl561")]
