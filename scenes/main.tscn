@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=14 format=3 uid="uid://u575fnqn6unq"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
+[ext_resource type="Texture2D" uid="uid://c0wjip37oe0ro" path="res://sprites/Background.png" id="1_s5s26"]
 [ext_resource type="PackedScene" uid="uid://by1vuvdghlhku" path="res://scenes/Bubble.tscn" id="2_6hccx"]
 [ext_resource type="PackedScene" uid="uid://dbixmhvql664m" path="res://scenes/items/Algae.tscn" id="3_ft2sf"]
 [ext_resource type="PackedScene" uid="uid://b2chqf6ajvgy8" path="res://scenes/items/SpikeBall.tscn" id="3_w2vqd"]
 [ext_resource type="Script" path="res://scripts/ItemManager.cs" id="5_6rv6y"]
-[ext_resource type="PackedScene" uid="uid://uuly487bvq0q" path="res://scenes/items/Flipper.tscn" id="5_h47o7"]
+[ext_resource type="PackedScene" path="res://scenes/items/Flipper.tscn" id="5_h47o7"]
 [ext_resource type="Script" path="res://scripts/BubbleManager.cs" id="6_e4227"]
 [ext_resource type="AudioStream" uid="uid://5x62wyftl1c3" path="res://music/UnderwaterV4.wav" id="8_shmiq"]
 [ext_resource type="PackedScene" uid="uid://beh66r501sri7" path="res://scenes/items/BubbleSpawner.tscn" id="9_56iii"]
@@ -16,6 +17,10 @@
 font_size = 60
 
 [node name="Game" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_s5s26")
 
 [node name="ItemManager" type="Node" parent="."]
 script = ExtResource("5_6rv6y")
