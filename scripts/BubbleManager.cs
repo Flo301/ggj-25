@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class BubbleManager : Node
 {
@@ -22,8 +23,23 @@ public partial class BubbleManager : Node
 	private int BubbleAmountPerRound = 1;
 	[Export]
 	public PackedScene BubbleScene;
+	[Export]
+	private Node2D Arena;
 
 	private List<Bubble> ActiveBubbles = new List<Bubble>();
+
+	private Vector2 GetBubbleSpawnpoint()
+	{
+		var spawnLine = Arena?.GetNodeOrNull<Line2D>("Spawn");
+
+		if (spawnLine == null || spawnLine.Points.Count() < 2)
+		{
+			//Fallback
+			return new Vector2(new Random().Next(0, 900), 600);
+		}
+
+		return spawnLine.Points[0].Lerp(spawnLine.Points[1], GD.Randf());
+	}
 
 	public void SpawnBubbles()
 	{
@@ -32,7 +48,7 @@ public partial class BubbleManager : Node
 		{
 			Bubble bubble = BubbleScene.Instantiate<Bubble>();
 			//ToDo: Get better grid based random spawnpoint (don't use the same twice)
-			bubble.GlobalPosition = new Vector2(new Random().Next(0, 900), 600);
+			bubble.GlobalPosition = GetBubbleSpawnpoint();
 			AddChild(bubble);
 		}
 	}

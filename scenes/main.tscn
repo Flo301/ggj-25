@@ -1,6 +1,5 @@
 [gd_scene load_steps=11 format=3 uid="uid://u575fnqn6unq"]
 
-[ext_resource type="PackedScene" uid="uid://cbpjuo50qu72e" path="res://scenes/GridItem.tscn" id="1_mevl5"]
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="PackedScene" uid="uid://by1vuvdghlhku" path="res://scenes/Bubble.tscn" id="2_6hccx"]
 [ext_resource type="PackedScene" uid="uid://dbixmhvql664m" path="res://scenes/items/Algae.tscn" id="3_ft2sf"]
@@ -9,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/BubbleManager.cs" id="6_e4227"]
 [ext_resource type="AudioStream" uid="uid://5x62wyftl1c3" path="res://music/UnderwaterV4.wav" id="8_shmiq"]
 [ext_resource type="PackedScene" uid="uid://beh66r501sri7" path="res://scenes/items/BubbleSpawner.tscn" id="9_56iii"]
+[ext_resource type="PackedScene" uid="uid://ccrt46uw47b13" path="res://scenes/arena/arena_1.tscn" id="9_hl561"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
 font_size = 60
@@ -19,10 +19,11 @@ font_size = 60
 script = ExtResource("5_6rv6y")
 AvailableItems = Array[PackedScene]([ExtResource("3_ft2sf"), ExtResource("3_w2vqd"), ExtResource("9_56iii")])
 
-[node name="BubbleManager" type="Node" parent="."]
+[node name="BubbleManager" type="Node" parent="." node_paths=PackedStringArray("Arena")]
 script = ExtResource("6_e4227")
 BubbleAmountPerRound = 3
 BubbleScene = ExtResource("2_6hccx")
+Arena = NodePath("../Arena1")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_ro3y3")
@@ -54,142 +55,4 @@ horizontal_alignment = 1
 stream = ExtResource("8_shmiq")
 autoplay = true
 
-[node name="Line_0" type="Node2D" parent="."]
-position = Vector2(96, 505)
-
-[node name="ItemSlot" parent="Line_0" instance=ExtResource("1_mevl5")]
-
-[node name="ItemSlot2" parent="Line_0" instance=ExtResource("1_mevl5")]
-position = Vector2(100, 0)
-
-[node name="ItemSlot3" parent="Line_0" instance=ExtResource("1_mevl5")]
-position = Vector2(200, 0)
-
-[node name="ItemSlot4" parent="Line_0" instance=ExtResource("1_mevl5")]
-position = Vector2(300, 0)
-
-[node name="ItemSlot5" parent="Line_0" instance=ExtResource("1_mevl5")]
-position = Vector2(400, 0)
-
-[node name="ItemSlot6" parent="Line_0" instance=ExtResource("1_mevl5")]
-position = Vector2(500, 0)
-
-[node name="ItemSlot7" parent="Line_0" instance=ExtResource("1_mevl5")]
-position = Vector2(600, 0)
-
-[node name="ItemSlot8" parent="Line_0" instance=ExtResource("1_mevl5")]
-position = Vector2(700, 0)
-
-[node name="ItemSlot9" parent="Line_0" instance=ExtResource("1_mevl5")]
-position = Vector2(800, 0)
-
-[node name="ItemSlot10" parent="Line_0" instance=ExtResource("1_mevl5")]
-position = Vector2(900, 0)
-
-[node name="Line_1" type="Node2D" parent="."]
-position = Vector2(146, 405)
-
-[node name="ItemSlot" parent="Line_1" instance=ExtResource("1_mevl5")]
-
-[node name="ItemSlot3" parent="Line_1" instance=ExtResource("1_mevl5")]
-position = Vector2(200, 0)
-
-[node name="GridItem_Alge" parent="Line_1" instance=ExtResource("3_ft2sf")]
-position = Vector2(400, 0)
-
-[node name="ItemSlot6" parent="Line_1" instance=ExtResource("1_mevl5")]
-position = Vector2(500, 0)
-
-[node name="ItemSlot7" parent="Line_1" instance=ExtResource("1_mevl5")]
-position = Vector2(600, 0)
-
-[node name="ItemSlot8" parent="Line_1" instance=ExtResource("1_mevl5")]
-position = Vector2(700, 0)
-
-[node name="ItemSlot9" parent="Line_1" instance=ExtResource("1_mevl5")]
-position = Vector2(800, 0)
-
-[node name="ItemSlot10" parent="Line_1" instance=ExtResource("1_mevl5")]
-position = Vector2(900, 0)
-
-[node name="Line_2" type="Node2D" parent="."]
-position = Vector2(96, 305)
-
-[node name="ItemSlot" parent="Line_2" instance=ExtResource("1_mevl5")]
-
-[node name="ItemSlot2" parent="Line_2" instance=ExtResource("1_mevl5")]
-position = Vector2(100, 0)
-
-[node name="ItemSlot3" parent="Line_2" instance=ExtResource("1_mevl5")]
-position = Vector2(200, 0)
-
-[node name="ItemSlot4" parent="Line_2" instance=ExtResource("1_mevl5")]
-position = Vector2(300, 0)
-
-[node name="ItemSlot5" parent="Line_2" instance=ExtResource("1_mevl5")]
-position = Vector2(400, 0)
-
-[node name="ItemSlot6" parent="Line_2" instance=ExtResource("1_mevl5")]
-position = Vector2(500, 0)
-
-[node name="ItemSlot7" parent="Line_2" instance=ExtResource("1_mevl5")]
-position = Vector2(600, 0)
-
-[node name="ItemSlot8" parent="Line_2" instance=ExtResource("1_mevl5")]
-position = Vector2(700, 0)
-
-[node name="ItemSlot9" parent="Line_2" instance=ExtResource("1_mevl5")]
-position = Vector2(800, 0)
-
-[node name="ItemSlot10" parent="Line_2" instance=ExtResource("1_mevl5")]
-position = Vector2(900, 0)
-
-[node name="Line_3" type="Node2D" parent="."]
-position = Vector2(146, 205)
-
-[node name="ItemSlot" parent="Line_3" instance=ExtResource("1_mevl5")]
-
-[node name="ItemSlot2" parent="Line_3" instance=ExtResource("1_mevl5")]
-position = Vector2(100, 0)
-
-[node name="ItemSlot3" parent="Line_3" instance=ExtResource("1_mevl5")]
-position = Vector2(200, 0)
-
-[node name="ItemSlot4" parent="Line_3" instance=ExtResource("1_mevl5")]
-position = Vector2(300, 0)
-
-[node name="ItemSlot5" parent="Line_3" instance=ExtResource("1_mevl5")]
-position = Vector2(400, 0)
-
-[node name="ItemSlot6" parent="Line_3" instance=ExtResource("1_mevl5")]
-position = Vector2(500, 0)
-
-[node name="ItemSlot7" parent="Line_3" instance=ExtResource("1_mevl5")]
-position = Vector2(600, 0)
-
-[node name="ItemSlot8" parent="Line_3" instance=ExtResource("1_mevl5")]
-position = Vector2(700, 0)
-
-[node name="ItemSlot9" parent="Line_3" instance=ExtResource("1_mevl5")]
-position = Vector2(800, 0)
-
-[node name="ItemSlot10" parent="Line_3" instance=ExtResource("1_mevl5")]
-position = Vector2(900, 0)
-
-[node name="Spikeball" parent="." instance=ExtResource("3_w2vqd")]
-position = Vector2(498, 119)
-
-[node name="Spikeball2" parent="." instance=ExtResource("3_w2vqd")]
-position = Vector2(398, 122)
-
-[node name="Spikeball3" parent="." instance=ExtResource("3_w2vqd")]
-position = Vector2(601, 118)
-
-[node name="Spikeball4" parent="." instance=ExtResource("3_w2vqd")]
-position = Vector2(700, 117)
-
-[node name="BubbleSpawner" parent="." instance=ExtResource("9_56iii")]
-position = Vector2(444, 406)
-
-[node name="BubbleSpawner2" parent="." instance=ExtResource("9_56iii")]
-position = Vector2(247, 405)
+[node name="Arena1" parent="." instance=ExtResource("9_hl561")]
