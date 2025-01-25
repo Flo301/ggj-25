@@ -52,6 +52,7 @@ Gamedesign
 => Zeitmanipulation
 
 Item-Ideen:
-=> Consumed 3 Bubbles und spawnt dann 6 Bubbles, Cooldown
-=> Ein Multiplikatorbonis auf die Bubble, Cooldown (macht bubble Golden?)
-=> Teleporter, setzt Bubble wieder an Start zurück, sehr hoher Cooldown
+=> Flipper: Schleudert Blase wieder runter
+=> Blasen-Explosion: Consumed 3 Bubbles und spawnt dann 6 Bubbles, Cooldown
+=> Vergolder: Ein Multiplikatorbonis auf die Bubble, Cooldown (macht bubble Golden?)
+=> Teleporter: setzt Bubble wieder an Start zurück, sehr hoher Cooldown
