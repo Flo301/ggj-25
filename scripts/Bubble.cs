@@ -9,9 +9,16 @@ public partial class Bubble : RigidBody2D
 		BubbleManager.Instance.AddBubble(this);
 	}
 
-	private void OnCollide(Node node)
+    public override void _Process(double delta)
+    {
+		//ToDo: Delete bubble when reaching deadzone UwU 03:19
+
+        base._Process(delta);
+    }
+
+    private void OnCollide(Node node)
 	{
-		GD.Print(Name + " collide with " + node.Name);
+		//GD.Print(Name + " collide with " + node.Name);
 		var item = node as GridItem;
 		if(item != null)
 		{

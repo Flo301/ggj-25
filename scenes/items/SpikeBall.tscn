@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2chqf6ajvgy8"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="1_7gfqc"]
+[ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="2_o3tmd"]
+[ext_resource type="Texture2D" uid="uid://tryp8p0xvwcd" path="res://sprites/items/Spikeball.png" id="3_lwj4c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
+radius = 15.0
+
+[node name="Spikeball" type="StaticBody2D"]
+physics_material_override = ExtResource("1_7gfqc")
+script = ExtResource("2_o3tmd")
+MultiplierIncreasePerRound = 0.1
+BasePointsOnTrigger = 150
+ConsumeBubble = true
+Rarity = 2
+Description = "150P when triggert, consums the bubble"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_duixi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_lwj4c")

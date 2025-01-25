@@ -2,7 +2,7 @@
 
 [ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="1_j63tu"]
 [ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="2_nlnev"]
-[ext_resource type="Texture2D" uid="uid://drhypsh184qid" path="res://sprites/Alge.png" id="3_tcuvp"]
+[ext_resource type="Texture2D" uid="uid://drhypsh184qid" path="res://sprites/items/Alge.png" id="3_tcuvp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
 radius = 15.0

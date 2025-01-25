@@ -22,4 +22,8 @@ texture = ExtResource("1_30raj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_eef8p")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-100, -100, 200, 200)
+
 [connection signal="body_entered" from="." to="." method="OnCollide"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="Destroy"]
