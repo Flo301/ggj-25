@@ -40,6 +40,7 @@ public partial class CardSelector : Control
 			else if(Input.IsMouseButtonPressed(MouseButton.Right))
 			{
 				CurrentItemToPlace.QueueFree();
+				CurrentItemToPlace = null;
 				OnPlacementCanceled();
 			}
 		}

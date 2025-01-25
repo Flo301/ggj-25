@@ -37,7 +37,9 @@ public partial class GridItem : Node2D
 
 	public override void _ExitTree()
 	{
-		ItemManager.Instance.RemoveItem(this);
+		if (this.IsQueuedForDeletion())
+			ItemManager.Instance.RemoveItem(this);
+
 		base._ExitTree();
 	}
 
