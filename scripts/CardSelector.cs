@@ -36,6 +36,11 @@ public partial class CardSelector : Control
 				SelectedGridItem.GetParent().AddChild(CurrentItemToPlace);
 				SelectedGridItem.QueueFree();
 				OnPlacement();
+			} 
+			else if(Input.IsMouseButtonPressed(MouseButton.Right))
+			{
+				CurrentItemToPlace.QueueFree();
+				OnPlacementCanceled();
 			}
 		}
 	}
@@ -89,7 +94,7 @@ public partial class CardSelector : Control
 
 	public void OnPlacementCanceled()
 	{
-		CardContainer.Visible = true;
+		this.Visible = true;
 		//Unhide CardSelector
 	}
 	
