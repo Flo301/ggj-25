@@ -13,6 +13,7 @@ physics_material_override = ExtResource("1_xoq7b")
 script = ExtResource("2_c3h4g")
 BasePointsOnTrigger = 10
 SpawnWhenTriggert = ExtResource("3_c4p1k")
+SpawnForce = 90.0
 CooldownInSeconds = 5.0
 Rarity = 3
 Description = "10P when triggert, spawns Bubble, 5s Cooldown"

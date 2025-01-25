@@ -83,7 +83,7 @@ public partial class GridItem : Node2D
 		if (SpawnWhenTriggert != null)
 		{
 			var newNode = SpawnWhenTriggert.Instantiate<Node2D>();
-			GetWindow().AddChild(newNode);
+			GetWindow().CallDeferred("add_child", newNode);
 			newNode.GlobalPosition = GlobalPosition + Vector2.Down * 50f;
 
 			var rigidBody = newNode.GetNodeOrNull<RigidBody2D>("");

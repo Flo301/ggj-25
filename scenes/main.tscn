@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cbpjuo50qu72e" path="res://scenes/GridItem.tscn" id="1_mevl5"]
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="PackedScene" uid="uid://by1vuvdghlhku" path="res://scenes/Bubble.tscn" id="2_6hccx"]
-[ext_resource type="PackedScene" uid="uid://dbixmhvql664m" path="res://scenes/items/Alge.tscn" id="3_ft2sf"]
+[ext_resource type="PackedScene" uid="uid://dbixmhvql664m" path="res://scenes/items/Algae.tscn" id="3_ft2sf"]
 [ext_resource type="PackedScene" uid="uid://b2chqf6ajvgy8" path="res://scenes/items/SpikeBall.tscn" id="3_w2vqd"]
 [ext_resource type="Script" path="res://scripts/ItemManager.cs" id="5_6rv6y"]
 [ext_resource type="Script" path="res://scripts/BubbleManager.cs" id="6_e4227"]
-[ext_resource type="AudioStream" uid="uid://da60orygg7w7n" path="res://music/Wasserspaß(1).mp3" id="7_n3b1g"]
+[ext_resource type="AudioStream" uid="uid://bx2bu3o5gy7ib" path="res://music/UnderwaterV3.wav" id="8_ymd5c"]
 [ext_resource type="PackedScene" uid="uid://beh66r501sri7" path="res://scenes/items/BubbleSpawner.tscn" id="9_56iii"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
@@ -51,7 +51,7 @@ label_settings = SubResource("LabelSettings_0lfbj")
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_n3b1g")
+stream = ExtResource("8_ymd5c")
 autoplay = true
 
 [node name="Line_0" type="Node2D" parent="."]

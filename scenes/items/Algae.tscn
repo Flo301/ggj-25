@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbixmhvql664m"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="1_j63tu"]
+[ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="2_nlnev"]
+[ext_resource type="Texture2D" uid="uid://drhypsh184qid" path="res://sprites/items/Alge.png" id="3_tcuvp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
+radius = 15.0
+
+[node name="Algae" type="StaticBody2D"]
+physics_material_override = ExtResource("1_j63tu")
+script = ExtResource("2_nlnev")
+MultiplierIncreasePerRound = 0.1
+BasePointsOnTrigger = 10
+Rarity = 2
+Description = "10P when triggert, Multiplier increases 10% each round"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_duixi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_tcuvp")
