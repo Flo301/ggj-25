@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drhypsh184qid"
-path="res://.godot/imported/Alge.png-9ae929ef65e80afe45cc2123240962a1.ctex"
+uid="uid://b7b7oebkgxdj6"
+path="res://.godot/imported/Flipper.png-994366a77003a019fc874bff49fd4b5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/Alge.png"
-dest_files=["res://.godot/imported/Alge.png-9ae929ef65e80afe45cc2123240962a1.ctex"]
+source_file="res://sprites/items/Flipper.png"
+dest_files=["res://.godot/imported/Flipper.png-994366a77003a019fc874bff49fd4b5d.ctex"]
 
 [params]
 

@@ -18,6 +18,8 @@ public partial class GridItem : Node2D
 	public float SpawnForce { get; protected set; } = 30f;
 	[Export]
 	public float CooldownInSeconds { get; protected set; } = 0f;
+	[Export]
+	public bool ExtraBounce { get; protected set; } = false;
 
 	//INFO-DISPLAY
 	[Export]
@@ -96,8 +98,14 @@ public partial class GridItem : Node2D
 			}
 		}
 
-		//Add velocity to bubble
-		//bubble.AngularVelocity = 
+		if (ExtraBounce)
+		{
+			//Add velocity to bubble
+			bubble.SetAxisVelocity(Vector2.Down * 300);
+			var oldMask = bubble.CollisionMask;
+			bubble.CollisionMask = 0;
+			GetTree().CreateTimer(1.3f).Timeout += () => {bubble.CollisionMask = oldMask;};
+		}
 	}
 
 	public virtual void OnRoundEnd()
