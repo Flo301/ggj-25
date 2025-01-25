@@ -1,36 +1,36 @@
 GRID
-[F] ItemSlots
-[ ] Arena
-[ ] Main Szene vorbereiten
+[X] ItemSlots
+[F] Arena
+[F] Main Szene vorbereiten
 
 BLASE
-[F] game engine physics
-[ ] Blase als Spieler platzieren
-[F] eigene physics
+[X] game engine physics
+[X] Blase als Spieler platzieren
+[X] eigene physics
 
 ITEMS
-[ ] Flipper
-[ ] Alge
-[ ] Stachelkugel
-[ ] Spawner
-[ ] Item auf Itemslot platzieren
+[F] Flipper
+[X] Alge
+[X] Stachelkugel
+[X] Spawner
+[X] Item auf Itemslot platzieren
 
-[ ] Auswahlmenü
+[X] Auswahlmenü
  * Auswahlkarten
  * Wähle zwischen 3? Random Itemsbasis
  * Wähle zwischen 2? Upgrades
 
-[ ] Gameloop
+[X] Gameloop
  1) Itemauswahl
  2) Item platzieren
  3) Blase startet
  4) Blase simulation
 
 ART
-[R] Auswahlkarten
-[R] V1_Items
-[R] ItemSlots
-[R] Bubble
+[X] Auswahlkarten
+[X] V1_Items
+[X] ItemSlots
+[X] Bubble
 [R] Hintergrund
 
 [ ] Upgrades
@@ -50,3 +50,8 @@ Gamedesign
 => synagien zwischen Items (boosts) oder bubble zustände
 => bubble trägt etwas zu einen anderen Item oder aus der Arena
 => Zeitmanipulation
+
+Item-Ideen:
+=> Consumed 3 Bubbles und spawnt dann 6 Bubbles, Cooldown
+=> Ein Multiplikatorbonis auf die Bubble, Cooldown (macht bubble Golden?)
+=> Teleporter, setzt Bubble wieder an Start zurück, sehr hoher Cooldown
