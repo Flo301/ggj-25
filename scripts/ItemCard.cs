@@ -41,8 +41,9 @@ public partial class ItemCard : Control
 	{
 	}
 	
-	public void OnMouseEnter()
+	public void OnMouseClick()
 	{
+		//Send Item to CardSelector
 		
 	}
 }

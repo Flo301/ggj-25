@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpbqj8qei5pu8"]
+[gd_scene load_steps=4 format=3 uid="uid://cpbqj8qei5pu8"]
 
 [ext_resource type="PackedScene" uid="uid://cuhuxmip7xd0w" path="res://scenes/item_card.tscn" id="1_indxl"]
 [ext_resource type="Texture2D" uid="uid://bvctoxcgccpk3" path="res://sprites/ItemSlot.png" id="2_50oj6"]
 
-[node name="UITestEnv" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_e3ldf"]
+font_size = 67
+
+[node name="Node" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,33 +14,53 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ItemSelectContainer" type="BoxContainer" parent="."]
+[node name="CardSelector" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ItemSelectContainer" type="BoxContainer" parent="CardSelector"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -451.0
+offset_left = 55.0
 offset_top = 110.0
-offset_right = 449.0
+offset_right = 1055.0
 offset_bottom = 510.0
 grow_horizontal = 2
+theme_override_constants/separation = 50
 alignment = 1
 
-[node name="ItemCard" parent="ItemSelectContainer" instance=ExtResource("1_indxl")]
+[node name="ItemCard" parent="CardSelector/ItemSelectContainer" instance=ExtResource("1_indxl")]
 layout_mode = 2
 Icon = ExtResource("2_50oj6")
-NameText = "Stachelkugel"
-DescriptionText = "Bei kontakt wird die Blase platzen."
+NameText = "Sea Urchin"
+DescriptionText = "Pops the Bubble on contact."
 
-[node name="ItemCard2" parent="ItemSelectContainer" instance=ExtResource("1_indxl")]
+[node name="ItemCard2" parent="CardSelector/ItemSelectContainer" instance=ExtResource("1_indxl")]
 layout_mode = 2
 Icon = ExtResource("2_50oj6")
 Rarity = 4
-NameText = "Alge"
-DescriptionText = "Steigert jede runde die anzahl der Punkte die von der Blase bei kontakt gesammelt wird."
+NameText = "Algae"
+DescriptionText = "Every Round it increses its value."
 
-[node name="ItemCard3" parent="ItemSelectContainer" instance=ExtResource("1_indxl")]
+[node name="ItemCard3" parent="CardSelector/ItemSelectContainer" instance=ExtResource("1_indxl")]
 layout_mode = 2
 Icon = ExtResource("2_50oj6")
 NameText = "Flipper"
-DescriptionText = "Schlägt die Blase in eine richtung."
+DescriptionText = "Hits the Bubble back down."
+
+[node name="Label" type="Label" parent="CardSelector"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 261.5
+offset_right = 850.5
+offset_bottom = 92.0
+grow_horizontal = 2
+text = "Choose your Path:"
+label_settings = SubResource("LabelSettings_e3ldf")
+horizontal_alignment = 1
+vertical_alignment = 1

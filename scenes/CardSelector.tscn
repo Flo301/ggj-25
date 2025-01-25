@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm5c85nyjwdr6"]
+
+[ext_resource type="PackedScene" uid="uid://cuhuxmip7xd0w" path="res://scenes/item_card.tscn" id="1_1an72"]
+[ext_resource type="Script" path="res://scenes/CardSelector.cs" id="1_6mk3h"]
+[ext_resource type="Texture2D" uid="uid://bvctoxcgccpk3" path="res://sprites/ItemSlot.png" id="2_bade7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3ldf"]
+font_size = 67
+
+[node name="CardSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6mk3h")
+
+[node name="ItemSelectContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 55.0
+offset_top = 110.0
+offset_right = 1055.0
+offset_bottom = 510.0
+grow_horizontal = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ItemCard" parent="ItemSelectContainer" instance=ExtResource("1_1an72")]
+layout_mode = 2
+Icon = ExtResource("2_bade7")
+NameText = "Sea Urchin"
+DescriptionText = "Pops the Bubble on contact."
+
+[node name="ItemCard2" parent="ItemSelectContainer" instance=ExtResource("1_1an72")]
+layout_mode = 2
+Icon = ExtResource("2_bade7")
+Rarity = 4
+NameText = "Algae"
+DescriptionText = "Every Round it increses its value."
+
+[node name="ItemCard3" parent="ItemSelectContainer" instance=ExtResource("1_1an72")]
+layout_mode = 2
+Icon = ExtResource("2_bade7")
+NameText = "Flipper"
+DescriptionText = "Hits the Bubble back down."
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 261.5
+offset_right = 850.5
+offset_bottom = 92.0
+grow_horizontal = 2
+text = "Choose your Path:"
+label_settings = SubResource("LabelSettings_e3ldf")
+horizontal_alignment = 1
+vertical_alignment = 1
