@@ -32,7 +32,7 @@ public partial class BubbleManager : Node
 		{
 			Bubble bubble = BubbleScene.Instantiate<Bubble>();
 			//ToDo: Get better grid based random spawnpoint (don't use the same twice)
-			bubble.GlobalPosition = new Vector2(new Random().Next(0, 900), 150);
+			bubble.GlobalPosition = new Vector2(new Random().Next(0, 900), 600);
 			AddBubble(bubble);
 			AddChild(bubble);
 		}

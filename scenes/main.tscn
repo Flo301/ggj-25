@@ -28,25 +28,24 @@ BubbleScene = ExtResource("2_6hccx")
 script = ExtResource("1_ro3y3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(492, -231)
-zoom = Vector2(0.7, 0.7)
+anchor_mode = 0
 
 [node name="PointLabel" type="Label" parent="Camera2D"]
 unique_name_in_owner = true
-offset_left = -70.0
-offset_top = -455.0
-offset_right = 85.0
-offset_bottom = -372.0
+offset_left = 507.0
+offset_top = 7.0
+offset_right = 662.0
+offset_bottom = 90.0
 text = "100 P"
 label_settings = SubResource("LabelSettings_0lfbj")
 horizontal_alignment = 1
 
 [node name="RoundLabel" type="Label" parent="Camera2D"]
 unique_name_in_owner = true
-offset_left = -811.0
-offset_top = -455.0
-offset_right = -575.0
-offset_bottom = -372.0
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 240.0
+offset_bottom = 92.0
 text = "Runde 1"
 label_settings = SubResource("LabelSettings_0lfbj")
 horizontal_alignment = 1
@@ -56,6 +55,7 @@ stream = ExtResource("7_n3b1g")
 autoplay = true
 
 [node name="Line_0" type="Node2D" parent="."]
+position = Vector2(96, 505)
 
 [node name="ItemSlot" parent="Line_0" instance=ExtResource("1_mevl5")]
 
@@ -87,7 +87,7 @@ position = Vector2(800, 0)
 position = Vector2(900, 0)
 
 [node name="Line_1" type="Node2D" parent="."]
-position = Vector2(50, -100)
+position = Vector2(146, 405)
 
 [node name="ItemSlot" parent="Line_1" instance=ExtResource("1_mevl5")]
 
@@ -113,7 +113,7 @@ position = Vector2(800, 0)
 position = Vector2(900, 0)
 
 [node name="Line_2" type="Node2D" parent="."]
-position = Vector2(0, -200)
+position = Vector2(96, 305)
 
 [node name="ItemSlot" parent="Line_2" instance=ExtResource("1_mevl5")]
 
@@ -145,7 +145,7 @@ position = Vector2(800, 0)
 position = Vector2(900, 0)
 
 [node name="Line_3" type="Node2D" parent="."]
-position = Vector2(50, -300)
+position = Vector2(146, 205)
 
 [node name="ItemSlot" parent="Line_3" instance=ExtResource("1_mevl5")]
 
@@ -177,19 +177,19 @@ position = Vector2(800, 0)
 position = Vector2(900, 0)
 
 [node name="Spikeball" parent="." instance=ExtResource("3_w2vqd")]
-position = Vector2(402, -386)
+position = Vector2(498, 119)
 
 [node name="Spikeball2" parent="." instance=ExtResource("3_w2vqd")]
-position = Vector2(302, -383)
+position = Vector2(398, 122)
 
 [node name="Spikeball3" parent="." instance=ExtResource("3_w2vqd")]
-position = Vector2(505, -387)
+position = Vector2(601, 118)
 
 [node name="Spikeball4" parent="." instance=ExtResource("3_w2vqd")]
-position = Vector2(604, -388)
+position = Vector2(700, 117)
 
 [node name="BubbleSpawner" parent="." instance=ExtResource("9_56iii")]
-position = Vector2(348, -99)
+position = Vector2(444, 406)
 
 [node name="BubbleSpawner2" parent="." instance=ExtResource("9_56iii")]
-position = Vector2(151, -100)
+position = Vector2(247, 405)
