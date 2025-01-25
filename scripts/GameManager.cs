@@ -16,6 +16,8 @@ public partial class GameManager : Node
 		Instance = this;
 
 		PointLabel = GetNode<Label>("%PointLabel");
+		RoundLabel = GetNode<Label>("%RoundLabel");
+		Round = 0;
 		AddPoints(0);
 
 		//ToDo: Start with Random Item
@@ -26,21 +28,23 @@ public partial class GameManager : Node
 
 	//NODES
 	private Label PointLabel;
+	private Label RoundLabel;
 
 	//PROPERTIES
 	private bool IsRoundActive = false;
 	private int Points = 0;
-	private int Round = 0;
+	private int round = 0;
+	private int Round { get => round; set { RoundLabel.Text = "Round " + value; round = value; } }
 
 	public void StartNextRound()
 	{
+		Round++;
 		IsRoundActive = true;
 		BubbleManager.Instance.SpawnBubbles();
 	}
 
 	public void OnRoundEnd()
 	{
-		Round++;
 		IsRoundActive = false;
 		ItemManager.Instance.OnRoundEnd();
 		ItemManager.Instance.GetRandomItem();
