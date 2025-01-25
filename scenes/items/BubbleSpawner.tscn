@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://beh66r501sri7"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="1_xoq7b"]
+[ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="2_c3h4g"]
+[ext_resource type="PackedScene" uid="uid://by1vuvdghlhku" path="res://scenes/Bubble.tscn" id="3_c4p1k"]
+[ext_resource type="Texture2D" uid="uid://b2jnch6rphqi0" path="res://sprites/items/BubbleSpawner.png" id="3_ep8j3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
+radius = 15.0
+
+[node name="BubbleSpawner" type="StaticBody2D"]
+physics_material_override = ExtResource("1_xoq7b")
+script = ExtResource("2_c3h4g")
+BasePointsOnTrigger = 10
+SpawnWhenTriggert = ExtResource("3_c4p1k")
+CooldownInSeconds = 5.0
+Rarity = 3
+Description = "10P when triggert, spawns Bubble, 5s Cooldown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_duixi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_ep8j3")
