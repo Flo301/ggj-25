@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b2chqf6ajvgy8" path="res://scenes/items/SpikeBall.tscn" id="3_w2vqd"]
 [ext_resource type="Script" path="res://scripts/ItemManager.cs" id="5_6rv6y"]
 [ext_resource type="Script" path="res://scripts/BubbleManager.cs" id="6_e4227"]
-[ext_resource type="AudioStream" uid="uid://bx2bu3o5gy7ib" path="res://music/UnderwaterV3.wav" id="8_ymd5c"]
+[ext_resource type="AudioStream" uid="uid://5x62wyftl1c3" path="res://music/UnderwaterV4.wav" id="8_shmiq"]
 [ext_resource type="PackedScene" uid="uid://beh66r501sri7" path="res://scenes/items/BubbleSpawner.tscn" id="9_56iii"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
@@ -51,7 +51,7 @@ label_settings = SubResource("LabelSettings_0lfbj")
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_ymd5c")
+stream = ExtResource("8_shmiq")
 autoplay = true
 
 [node name="Line_0" type="Node2D" parent="."]
