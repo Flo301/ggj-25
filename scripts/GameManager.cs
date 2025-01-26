@@ -25,6 +25,9 @@ public partial class GameManager : Node
 		ItemManager.Instance.GetRandomItem();
 	}
 	#endregion
+	
+	[Export]
+	private PackedScene WinLoosePopup;
 
 	//Config
 	[Export]
@@ -61,6 +64,9 @@ public partial class GameManager : Node
 		{
 			if (CurrentStage.RequiredPoints > Points)
 			{
+				PopupWinLoose PopupInstance = WinLoosePopup.Instantiate<PopupWinLoose>();
+				PopupInstance.Win = false;
+				AddChild(PopupInstance);
 				//ToDo: LOST
 				GD.Print("LOST");
 				return;
@@ -69,6 +75,9 @@ public partial class GameManager : Node
 
 			if (CurrentStage == null)
 			{
+				PopupWinLoose PopupInstance = WinLoosePopup.Instantiate<PopupWinLoose>();
+				PopupInstance.Win = true;
+				AddChild(PopupInstance);
 				//ToDo: GAME END
 				GD.Print("GAME END");
 				return;
@@ -87,5 +96,18 @@ public partial class GameManager : Node
 	{
 		Points += amount;
 		PointLabel.Text = Points + "P / " + CurrentStage?.RequiredPoints + "P";
+	}
+	
+	public void RestartGame()
+	{
+		//Restart Game
+		GetTree().ReloadCurrentScene();
+		//Singletons are being Reinstantiated
+	}
+	
+	public void ExitGame()
+	{
+		//Exit Game
+		GetTree().Quit();
 	}
 }
