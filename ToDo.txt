@@ -36,16 +36,19 @@ ART
  * alle X Runden
  * Punkte check
  * nach jeder Stage gibt es ein Upgrade
+[X] Bumper sounds / Item sounds
+[X] Multiplikator Anzeigebadge für die GridItems
+[X] Items auf Cooldown visualisieren
+[X] Stage UI - Intro Stage(OK), Loose(Try Again, Quit), Win(Play Again, Quit)
+[X] Item gewichtung nach Seletenheit und Stage
 
 NEXT:
-[R] Stage UI - Intro Stage(OK), Loose(Try Again, Quit), Win(Play Again, Quit)
+[ ] Generierte Beschreibungen
+[ ] Art für Flipper
+[ ] Fix Play again
 [R] Overlay UI - Rounds until next Stage
-[F] Bumper sounds / Item sounds
-[F] Multiplikator Anzeigebadge für die GridItems
-[F] Items auf Cooldown visualisieren
 
 V2:
-[ ] Item gewichtung nach Seletenheit und Stage
 [ ] Vergolder: Ein Multiplikatorbonis auf die Bubble erhöht dauerhaft Multiplikator von getroffenen Items, Cooldown (macht bubble Golden?)
 [ ] Blasen-Explosion: Consumed 3 Bubbles und spawnt dann 6 Bubbles, Cooldown
 [ ] Teleporter: setzt Bubble wieder an Start zurück, sehr hoher Cooldown
