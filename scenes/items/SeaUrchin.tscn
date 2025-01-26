@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
 radius = 15.0
 
-[node name="Spikeball" type="StaticBody2D"]
+[node name="Sea Urchin" type="StaticBody2D"]
 physics_material_override = ExtResource("1_7gfqc")
 script = ExtResource("2_o3tmd")
 BasePointsOnTrigger = 50
