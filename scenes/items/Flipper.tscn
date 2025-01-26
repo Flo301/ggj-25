@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqknhbi8eo0ai"]
+[gd_scene load_steps=7 format=3 uid="uid://dqknhbi8eo0ai"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="1_p2dw2"]
 [ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="2_aixwk"]
 [ext_resource type="Texture2D" uid="uid://b7b7oebkgxdj6" path="res://sprites/items/Flipper.png" id="3_u2m4v"]
+[ext_resource type="PackedScene" uid="uid://dqqchj1g7bkva" path="res://scenes/ui/MultiplierLabel.tscn" id="3_wgrnl"]
 [ext_resource type="AudioStream" uid="uid://50wcbvyf8uv0" path="res://sounds/bumps_2.tres" id="4_lfust"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
@@ -12,10 +13,11 @@ radius = 15.0
 physics_material_override = ExtResource("1_p2dw2")
 script = ExtResource("2_aixwk")
 BasePointsOnTrigger = 10
-CooldownInSeconds = 5.0
+CooldownInSeconds = 3.0
 ExtraBounce = true
 Rarity = 3
 Description = "10P when triggert, has a higher bounce rate"
+MultiplierScene = ExtResource("3_wgrnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_duixi")

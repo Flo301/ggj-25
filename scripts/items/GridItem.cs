@@ -33,7 +33,7 @@ public partial class GridItem : Node2D
 					AddChild(obj);
 					MultiplierLabel = obj.GetNode<Label>("%Label");
 				}
-				MultiplierLabel.Text = "x" + value;
+				MultiplierLabel.Text = "x" + Math.Round(value, 1);
 			}
 		}
 	}
@@ -62,12 +62,14 @@ public partial class GridItem : Node2D
 	private float CurrentCooldown = 0;
 	private AudioStreamPlayer2D TriggerSoundPlayer;
 	private Label MultiplierLabel;
+	private Sprite2D Sprite;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		ItemManager.Instance.AddItem(this);
 		TriggerSoundPlayer = GetNode<AudioStreamPlayer2D>("%TriggerSound");
+		Sprite = GetNodeOrNull<Sprite2D>("Sprite2D");
 
 		base._Ready();
 	}
@@ -88,7 +90,8 @@ public partial class GridItem : Node2D
 			CurrentCooldown -= (float)delta;
 			if (CurrentCooldown <= 0)
 			{
-				//ToDo: mark as active
+				//mark as active
+				Sprite.Modulate = Colors.White;
 			}
 		}
 	}
@@ -105,7 +108,8 @@ public partial class GridItem : Node2D
 		CurrentCooldown = CooldownInSeconds;
 		if (CurrentCooldown > 0f)
 		{
-			//ToDo: mark as inactive
+			//mark as inactive
+			Sprite.Modulate = Sprite.Modulate.Darkened(0.4f);
 		}
 
 		//create points
@@ -142,9 +146,8 @@ public partial class GridItem : Node2D
 		{
 			//Add velocity to bubble
 			bubble.SetAxisVelocity(Vector2.Down * 300);
-			var oldMask = bubble.CollisionMask;
 			bubble.CollisionMask = 0;
-			GetTree().CreateTimer(1.3f).Timeout += () => { bubble.CollisionMask = oldMask; };
+			GetTree().CreateTimer(1.3f).Timeout += () => { bubble.CollisionMask = 1; };
 		}
 	}
 

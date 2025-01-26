@@ -30,14 +30,34 @@ public partial class ItemManager : Node
 
 	public void GetRandomItem()
 	{
+		Dictionary<PackedScene, GridItem> matchTable = new Dictionary<PackedScene, GridItem>();
+		AvailableItems.ToList().ForEach(x => matchTable.Add(x,x.Instantiate<GridItem>()));
+
 		//roll random items
-		var rng = new RandomNumberGenerator();
-		var rngItems = new PackedScene[ItemAmountToChoose].Select(x => AvailableItems[rng.RandiRange(0, AvailableItems.Count() - 1)]);
-		
+		var rngItems = matchTable
+			.OrderByDescending(x => GD.Randf() + GetRarityBaseValue(x.Value.Rarity, GameManager.Instance.Stage))
+			.Take(ItemAmountToChoose)
+			.Select(x => x.Key);
+
+		matchTable.Select(x => x.Value).ToList().ForEach(x => x.QueueFree());
+
 		//open selector
 		CardSelector Selector = ItemSelectorScene.Instantiate<CardSelector>();
 		AddChild(Selector);
 		Selector.SetRandomItems(rngItems);
+
+		float GetRarityBaseValue(ERarity rarity, int stage)
+		{
+			switch (rarity)
+			{
+				case ERarity.COMMON: return 0.6f - stage / 10f;
+				case ERarity.UNCOMMON: return 0.55f - stage / 20f;
+				case ERarity.RARE: return 0.45f;
+				case ERarity.EPIC: return 0.30f + stage / 20f;
+				case ERarity.LEGENDARY: return 0.10f + stage / 40f;
+				default: throw new IndexOutOfRangeException();
+			}
+		}
 	}
 
 	public void AddItem(GridItem item)

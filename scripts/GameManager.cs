@@ -25,7 +25,7 @@ public partial class GameManager : Node
 		ItemManager.Instance.GetRandomItem();
 	}
 	#endregion
-	
+
 	[Export]
 	private PackedScene WinLoosePopup;
 
@@ -43,7 +43,7 @@ public partial class GameManager : Node
 	private int Points;
 	private int round;
 	private int Round { get => round; set { RoundLabel.Text = "Round " + value; round = value; } }
-	private int Stage = 0;
+	public int Stage { get; private set; }
 	public GameStageResource CurrentStage => Stage <= GameStages.Count() - 1 ? GameStages[Stage] : null;
 
 	public void StartNextRound()
@@ -97,14 +97,14 @@ public partial class GameManager : Node
 		Points += amount;
 		PointLabel.Text = Points + "P / " + CurrentStage?.RequiredPoints + "P";
 	}
-	
+
 	public void RestartGame()
 	{
 		//Restart Game
 		GetTree().ReloadCurrentScene();
 		//Singletons are being Reinstantiated
 	}
-	
+
 	public void ExitGame()
 	{
 		//Exit Game
