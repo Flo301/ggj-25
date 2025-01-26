@@ -30,7 +30,7 @@ vertical = true
 
 [node name="Label" type="Label" parent="SceneContainer"]
 layout_mode = 2
-text = "Choose your Path:"
+text = "Select your Item:"
 label_settings = SubResource("LabelSettings_e3ldf")
 horizontal_alignment = 1
 vertical_alignment = 1

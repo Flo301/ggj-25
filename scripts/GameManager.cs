@@ -18,10 +18,12 @@ public partial class GameManager : Node
 
 		PointLabel = GetNode<Label>("%PointLabel");
 		RoundLabel = GetNode<Label>("%RoundLabel");
+		StageLabel = GetNode<Label>("%StageLabel");
 		OnStartSoundPlayer = GetNode<AudioStreamPlayer2D>("%RoundStartPlayer");
 		Round = 1;
 		AddPoints(0);
 
+		RoundLabel.Text = (CurrentStage.EndsAtRound - Round) + " Round/s untill next stage";
 		ItemManager.Instance.GetRandomItem();
 	}
 	#endregion
@@ -39,14 +41,15 @@ public partial class GameManager : Node
 	//NODES
 	private Label PointLabel;
 	private Label RoundLabel;
+	private Label StageLabel;
 	private AudioStreamPlayer2D OnStartSoundPlayer;
 
 	//PROPERTIES
 	private bool IsRoundActive = false;
 	private int Points;
 	private int round;
-	private int Round { get => round; set { RoundLabel.Text = "Round " + value; round = value; } }
-	public int Stage { get; private set; }
+	private int Round { get => round; set { round = value; } }
+	public int Stage { get; private set; } = 1;
 	public GameStageResource CurrentStage => Stage <= GameStages.Count() ? GameStages[Stage - 1] : null;
 
 	public void StartNextRound()
@@ -75,6 +78,7 @@ public partial class GameManager : Node
 				return;
 			}
 			Stage++;
+			StageLabel.Text = "Stage " + Stage;
 
 			if (CurrentStage == null)
 			{
@@ -86,14 +90,13 @@ public partial class GameManager : Node
 				return;
 			}
 			//spawn popup
-			if (true)
-			{
-				PopupStageIntro PopupInstance = StageIntroPopup.Instantiate<PopupStageIntro>();
-				PopupInstance.StageTitleString = "Welcome to Stage " + Stage;
-				PopupInstance.StageMessageString = "You have to hit the Goal of " + CurrentStage.RequiredPoints + "P!\nYou have until Round: " + CurrentStage.EndsAtRound;
-				ItemManager.Instance.AddChild(PopupInstance);
-			}
-
+			PopupStageIntro StagePopupInstance = StageIntroPopup.Instantiate<PopupStageIntro>();
+			StagePopupInstance.StageTitleString = "Welcome to Stage " + Stage;
+			StagePopupInstance.StageMessageString = "You have to hit the Goal of " + CurrentStage.RequiredPoints + "P!\nYou have until Round: " + CurrentStage.EndsAtRound;
+			ItemManager.Instance.AddChild(StagePopupInstance);
+			
+			RoundLabel.Text = (CurrentStage.EndsAtRound - Round) + " Round/s untill next stage";
+			
 			ItemManager.Instance.OnRoundEnd();
 
 			AddPoints(-Points); //Reset points
