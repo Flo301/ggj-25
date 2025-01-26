@@ -23,19 +23,19 @@ public partial class ItemManager : Node
 	public PackedScene[] AvailableItems;
 	[Export]
 	public int ItemAmountToChoose = 3;
+	[Export]
+	public PackedScene ItemSelectorScene;
 
 	private List<GridItem> ActiveItems = new List<GridItem>();
 
 	public void GetRandomItem()
 	{
-		//Roll random items
+		//roll random items
 		var rng = new RandomNumberGenerator();
 		var rngItems = new PackedScene[ItemAmountToChoose].Select(x => AvailableItems[rng.RandiRange(0, AvailableItems.Count() - 1)]);
-
-		//ToDo: Open item selection
-		GD.Print(string.Join(",", rngItems.Select(x => x.ResourcePath)));
-		PackedScene SelectorScene = GD.Load<PackedScene>("res://scenes/CardSelector.tscn");
-		CardSelector Selector = SelectorScene.Instantiate<CardSelector>();
+		
+		//open selector
+		CardSelector Selector = ItemSelectorScene.Instantiate<CardSelector>();
 		AddChild(Selector);
 		Selector.SetRandomItems(rngItems);
 	}
@@ -60,9 +60,9 @@ public partial class ItemManager : Node
 	{
 		ActiveItems.ForEach(x => x.OnRoundEnd());
 	}
-	
+
 	public GridItem GetNearestItem(Godot.Vector2 pos, GridItem self)
 	{
-		return ActiveItems.Where(x => x != self ).OrderBy(x => x.GlobalPosition.DistanceTo(pos)).FirstOrDefault();
+		return ActiveItems.Where(x => x != self).OrderBy(x => x.GlobalPosition.DistanceTo(pos)).FirstOrDefault();
 	}
 }

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpbqj8qei5pu8"]
 
-[ext_resource type="PackedScene" uid="uid://cuhuxmip7xd0w" path="res://scenes/item_card.tscn" id="1_indxl"]
+[ext_resource type="PackedScene" uid="uid://cuhuxmip7xd0w" path="res://scenes/ui/item_card.tscn" id="1_indxl"]
 [ext_resource type="Texture2D" path="res://sprites/ItemSlot.png" id="2_50oj6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e3ldf"]

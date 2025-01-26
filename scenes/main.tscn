@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=23 format=3 uid="uid://u575fnqn6unq"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="Texture2D" uid="uid://c0wjip37oe0ro" path="res://sprites/Background.png" id="1_s5s26"]
@@ -8,16 +8,19 @@
 [ext_resource type="Script" path="res://scripts/ItemManager.cs" id="5_6rv6y"]
 [ext_resource type="PackedScene" uid="uid://dqknhbi8eo0ai" path="res://scenes/items/Flipper.tscn" id="5_h47o7"]
 [ext_resource type="Script" path="res://scripts/BubbleManager.cs" id="6_e4227"]
-[ext_resource type="PackedScene" uid="uid://b8roaabxws28r" path="res://scenes/items/GridItemRarities/GridItem-common.tscn" id="7_pbovj"]
-[ext_resource type="PackedScene" uid="uid://ga5dlnujghpl" path="res://scenes/items/GridItemRarities/GridItem-uncommon.tscn" id="8_der2b"]
+[ext_resource type="PackedScene" uid="uid://b8roaabxws28r" path="res://scenes/items/bumpers/Bumper-common.tscn" id="7_pbovj"]
+[ext_resource type="PackedScene" uid="uid://ga5dlnujghpl" path="res://scenes/items/bumpers/Bumper-uncommon.tscn" id="8_der2b"]
 [ext_resource type="AudioStream" uid="uid://5x62wyftl1c3" path="res://music/UnderwaterV4.wav" id="8_shmiq"]
 [ext_resource type="PackedScene" uid="uid://beh66r501sri7" path="res://scenes/items/BubbleSpawner.tscn" id="9_56iii"]
 [ext_resource type="PackedScene" uid="uid://ccrt46uw47b13" path="res://scenes/arena/arena_1.tscn" id="9_hl561"]
-[ext_resource type="PackedScene" uid="uid://dlaq26ffx5rud" path="res://scenes/items/GridItemRarities/GridItem-rare.tscn" id="9_o045f"]
+[ext_resource type="PackedScene" uid="uid://dlaq26ffx5rud" path="res://scenes/items/bumpers/Bumper-rare.tscn" id="9_o045f"]
 [ext_resource type="AudioStream" uid="uid://wb68apal1s4f" path="res://sounds/bubbles.mp3" id="9_swlcw"]
-[ext_resource type="PackedScene" uid="uid://2otq4pdukxp5" path="res://scenes/items/GridItemRarities/GridItem-epic.tscn" id="10_62w3o"]
-[ext_resource type="PackedScene" uid="uid://48l8ex2j52tn" path="res://scenes/items/GridItemRarities/GridItem-legendary.tscn" id="11_i3xnq"]
+[ext_resource type="PackedScene" uid="uid://2otq4pdukxp5" path="res://scenes/items/bumpers/Bumper-epic.tscn" id="10_62w3o"]
+[ext_resource type="PackedScene" uid="uid://48l8ex2j52tn" path="res://scenes/items/bumpers/Bumper-legendary.tscn" id="11_i3xnq"]
+[ext_resource type="PackedScene" uid="uid://db2y5hn1smqd8" path="res://scenes/ui/CardSelector.tscn" id="12_gan0x"]
 [ext_resource type="Resource" uid="uid://csarujhejqywu" path="res://resource/stage_1.tres" id="15_jbggw"]
+[ext_resource type="Resource" uid="uid://cq5a63rjal105" path="res://resource/stage_2.tres" id="17_uqnxl"]
+[ext_resource type="Resource" uid="uid://ulj231m07icd" path="res://resource/stage_3.tres" id="18_dn0fb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
 font_size = 60
@@ -31,6 +34,7 @@ texture = ExtResource("1_s5s26")
 [node name="ItemManager" type="Node" parent="."]
 script = ExtResource("5_6rv6y")
 AvailableItems = Array[PackedScene]([ExtResource("3_ft2sf"), ExtResource("3_w2vqd"), ExtResource("9_56iii"), ExtResource("5_h47o7"), ExtResource("7_pbovj"), ExtResource("8_der2b"), ExtResource("9_o045f"), ExtResource("10_62w3o"), ExtResource("11_i3xnq")])
+ItemSelectorScene = ExtResource("12_gan0x")
 
 [node name="BubbleManager" type="Node" parent="." node_paths=PackedStringArray("Arena")]
 script = ExtResource("6_e4227")
@@ -40,7 +44,7 @@ Arena = NodePath("../Arena1")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_ro3y3")
-GameStages = Array[Resource]([ExtResource("15_jbggw")])
+GameStages = Array[Resource]([ExtResource("15_jbggw"), ExtResource("17_uqnxl"), ExtResource("18_dn0fb")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

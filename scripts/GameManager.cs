@@ -56,14 +56,24 @@ public partial class GameManager : Node
 		GD.Print("OnRoundEnd");
 		IsRoundActive = false;
 
+		//Stage transition handling
 		if (CurrentStage.EndsAtRound == Round)
 		{
 			if (CurrentStage.RequiredPoints > Points)
 			{
-				//LOST
+				//ToDo: LOST
+				GD.Print("LOST");
 				return;
 			}
 			Stage++;
+
+			if (CurrentStage == null)
+			{
+				//ToDo: GAME END
+				GD.Print("GAME END");
+				return;
+			}
+
 			AddPoints(-Points); //Reset points
 		}
 
@@ -76,6 +86,6 @@ public partial class GameManager : Node
 	public void AddPoints(int amount)
 	{
 		Points += amount;
-		PointLabel.Text = Points + "P / " + CurrentStage.RequiredPoints + "P";
+		PointLabel.Text = Points + "P / " + CurrentStage?.RequiredPoints + "P";
 	}
 }

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccrt46uw47b13"]
 
-[ext_resource type="PackedScene" uid="uid://cbpjuo50qu72e" path="res://scenes/GridItem.tscn" id="1_8nnoj"]
+[ext_resource type="PackedScene" uid="uid://cbpjuo50qu72e" path="res://scenes/items/bumpers/Bumper-spawn.tscn" id="1_8nnoj"]
 
 [node name="Arena1" type="Node2D"]
 

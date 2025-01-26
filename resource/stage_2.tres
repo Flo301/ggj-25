@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_78q7d")
 EndsAtRound = 10
-RequiredPoints = 2000
+RequiredPoints = 900

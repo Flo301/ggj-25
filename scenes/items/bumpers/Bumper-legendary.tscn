@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
 radius = 15.0
 
-[node name="ItemSlot" type="StaticBody2D"]
+[node name="Bumper - Legendary" type="StaticBody2D"]
 physics_material_override = ExtResource("1_qxqs4")
 script = ExtResource("2_dke1d")
 BasePointsOnTrigger = 24

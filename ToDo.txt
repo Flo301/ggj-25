@@ -31,30 +31,39 @@ ART
 [X] V1_Items
 [X] ItemSlots
 [X] Bubble
-
-V2:
 [X] Hintergrund
-[ ] Multiplikator Anzeigebadge für die GridItems
-[ ] Items auf Cooldown visualisieren
-[ ] Stages
+[X] Stages
  * alle X Runden
  * Punkte check
  * nach jeder Stage gibt es ein Upgrade
+
+NEXT:
+[ ] Stage UI - Intro Stage(OK), Loose(Try Again, Quit), Win(Play Again, Quit)
+[ ] Overlay UI - Rounds until next Stage
+[ ] Bumper sounds
+[ ] Item sounds
+[ ] Multiplikator Anzeigebadge für die GridItems
+[ ] Items auf Cooldown visualisieren
+
+V2:
+[ ] Item gewichtung nach Seletenheit und Stage
 [ ] Vergolder: Ein Multiplikatorbonis auf die Bubble erhöht dauerhaft Multiplikator von getroffenen Items, Cooldown (macht bubble Golden?)
 [ ] Blasen-Explosion: Consumed 3 Bubbles und spawnt dann 6 Bubbles, Cooldown
 [ ] Teleporter: setzt Bubble wieder an Start zurück, sehr hoher Cooldown
 [ ] Bubblometer: Für jede in dieser Runde gespawnte Blase erhöht sich der Multiplikator, reset am ende der Runde. (Synergy mit BubbleSpawner)
-[ ] Upgrades
- * Gamechanging Zustand den man dauerhaft behält
- * extra Bubbles
- * Globaler Punktemultiplikator
+[ ] Main Menu + Quit Button
 
 Mega Optional:
+[ ] GameEnd Stats => Statsmanager
 [ ] Zeitmanipulation
 [ ] Neue Arena
 [ ] Hauptmenü
 [ ] Bubble trägt etwas zu einen anderen Item oder aus der Arena
 [ ] Synagien zwischen Items (boosts) oder bubble zustände
+[ ] Upgrades
+ * Gamechanging Zustand den man dauerhaft behält
+ * extra Bubbles
+ * Globaler Punktemultiplikator
 
 Verworfen
 [RIP] eingefroren, um einmal nicht zerstört zu werden
