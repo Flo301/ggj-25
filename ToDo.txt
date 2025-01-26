@@ -1,7 +1,7 @@
 GRID
 [X] ItemSlots
-[F] Arena
-[F] Main Szene vorbereiten
+[X] Arena
+[X] Main Szene vorbereiten
 
 BLASE
 [X] game engine physics
@@ -9,7 +9,7 @@ BLASE
 [X] eigene physics
 
 ITEMS
-[F] Flipper
+[X] Flipper: Schleudert Blase wieder runter
 [X] Alge
 [X] Stachelkugel
 [X] Spawner
@@ -31,28 +31,29 @@ ART
 [X] V1_Items
 [X] ItemSlots
 [X] Bubble
-[R] Hintergrund
 
+V2:
+[X] Hintergrund
+[ ] Multiplikator Anzeigebadge für die GridItems
+[ ] Items auf Cooldown visualisieren
+[ ] Stages
+ * alle X Runden
+ * Punkte check
+ * nach jeder Stage gibt es ein Upgrade
+[ ] Vergolder: Ein Multiplikatorbonis auf die Bubble erhöht dauerhaft Multiplikator von getroffenen Items, Cooldown (macht bubble Golden?)
+[ ] Blasen-Explosion: Consumed 3 Bubbles und spawnt dann 6 Bubbles, Cooldown
+[ ] Teleporter: setzt Bubble wieder an Start zurück, sehr hoher Cooldown
 [ ] Upgrades
  * Gamechanging Zustand den man dauerhaft behält
  * extra Bubbles
  * Globaler Punktemultiplikator
 
-[ ] Stages
- * alle X Runden
- * Punkte check
- * nach jeder Stage gibt es ein Upgrade
+Mega Optional:
+[ ] Zeitmanipulation
+[ ] Neue Arena
+[ ] Hauptmenü
+[ ] Bubble trägt etwas zu einen anderen Item oder aus der Arena
+[ ] Synagien zwischen Items (boosts) oder bubble zustände
 
-Gamedesign
-[ ] more Items
-=> bubble Zustände:
- * eingefroren, um einmal nicht zerstört zu werden
-=> synagien zwischen Items (boosts) oder bubble zustände
-=> bubble trägt etwas zu einen anderen Item oder aus der Arena
-=> Zeitmanipulation
-
-Item-Ideen:
-=> Flipper: Schleudert Blase wieder runter
-=> Blasen-Explosion: Consumed 3 Bubbles und spawnt dann 6 Bubbles, Cooldown
-=> Vergolder: Ein Multiplikatorbonis auf die Bubble, Cooldown (macht bubble Golden?)
-=> Teleporter: setzt Bubble wieder an Start zurück, sehr hoher Cooldown
+Verworfen
+[RIP] eingefroren, um einmal nicht zerstört zu werden
