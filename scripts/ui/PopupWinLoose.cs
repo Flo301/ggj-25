@@ -3,8 +3,6 @@ using System;
 
 public partial class PopupWinLoose : Control
 {
-	public bool Win = false;
-	
 	[Export]
 	public string WinTitleString;
 	[Export]
@@ -15,6 +13,7 @@ public partial class PopupWinLoose : Control
 	[Export]
 	public string LooseMessageString;
 	
+	public bool Win = false;
 	private Label TitleLabel;
 	private Label MessageLabel;
 	

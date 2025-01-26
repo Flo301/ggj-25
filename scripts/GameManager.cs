@@ -26,8 +26,11 @@ public partial class GameManager : Node
 	}
 	#endregion
 
+	//Popups
 	[Export]
 	private PackedScene WinLoosePopup;
+	[Export]
+	private PackedScene StageIntroPopup;
 
 	//Config
 	[Export]
@@ -44,7 +47,7 @@ public partial class GameManager : Node
 	private int round;
 	private int Round { get => round; set { RoundLabel.Text = "Round " + value; round = value; } }
 	public int Stage { get; private set; }
-	public GameStageResource CurrentStage => Stage <= GameStages.Count() - 1 ? GameStages[Stage] : null;
+	public GameStageResource CurrentStage => Stage <= GameStages.Count() ? GameStages[Stage - 1] : null;
 
 	public void StartNextRound()
 	{
@@ -82,8 +85,19 @@ public partial class GameManager : Node
 				GD.Print("GAME END");
 				return;
 			}
+			//spawn popup
+			if (true)
+			{
+				PopupStageIntro PopupInstance = StageIntroPopup.Instantiate<PopupStageIntro>();
+				PopupInstance.StageTitleString = "Welcome to Stage " + Stage;
+				PopupInstance.StageMessageString = "You have to hit the Goal of " + CurrentStage.RequiredPoints + "P!\nYou have until Round: " + CurrentStage.EndsAtRound;
+				ItemManager.Instance.AddChild(PopupInstance);
+			}
+
+			ItemManager.Instance.OnRoundEnd();
 
 			AddPoints(-Points); //Reset points
+			return;
 		}
 
 		ItemManager.Instance.OnRoundEnd();
