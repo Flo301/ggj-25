@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=27 format=3 uid="uid://u575fnqn6unq"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="Texture2D" uid="uid://c0wjip37oe0ro" path="res://sprites/Background.png" id="1_s5s26"]
@@ -24,8 +24,14 @@
 [ext_resource type="PackedScene" path="res://scenes/ui/PopupStageIntro.tscn" id="17_w5lkj"]
 [ext_resource type="Resource" uid="uid://ulj231m07icd" path="res://resource/stage_3.tres" id="18_dn0fb"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_k8nmh"]
+font_size = 47
+
 [sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
-font_size = 60
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_4udme"]
+font_size = 47
 
 [node name="Game" type="Node2D"]
 
@@ -63,36 +69,38 @@ mouse_filter = 2
 [node name="PointLabel" type="Label" parent="Camera2D/UI"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -77.5
-offset_right = 77.5
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -249.0
+offset_right = -12.0
 offset_bottom = 83.0
-grow_horizontal = 2
-text = "100 P"
-label_settings = SubResource("LabelSettings_0lfbj")
-horizontal_alignment = 1
+grow_horizontal = 0
+text = "100P/400P"
+label_settings = SubResource("LabelSettings_k8nmh")
+horizontal_alignment = 2
 
 [node name="StageLabel" type="Label" parent="Camera2D/UI"]
 unique_name_in_owner = true
-offset_left = 2.0
-offset_top = 511.0
-offset_right = 238.0
-offset_bottom = 594.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.5
+offset_right = 52.5
+offset_bottom = 42.0
+grow_horizontal = 2
 text = "Stage 1"
 label_settings = SubResource("LabelSettings_0lfbj")
-horizontal_alignment = 1
 
-[node name="RoundLabel" type="Label" parent="Camera2D/UI/StageLabel"]
+[node name="RoundLabel" type="Label" parent="Camera2D/UI"]
 unique_name_in_owner = true
-offset_left = -1.0
-offset_top = 84.0
-offset_right = 235.0
-offset_bottom = 136.0
+layout_mode = 1
+offset_left = 10.0
+offset_right = 195.0
+offset_bottom = 65.0
 text = "Runde 1"
-horizontal_alignment = 1
-autowrap_mode = 2
+label_settings = SubResource("LabelSettings_4udme")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_shmiq")

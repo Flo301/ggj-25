@@ -24,7 +24,7 @@ public partial class GameManager : Node
 		Round = 1;
 		AddPoints(0);
 
-		RoundLabel.Text = (CurrentStage.EndsAtRound - Round) + " Round/s untill next stage";
+		RoundLabel.Text = (CurrentStage.EndsAtRound - Round) + " Round/s left";
 		ItemManager.Instance.GetRandomItem();
 	}
 	#endregion
@@ -96,7 +96,7 @@ public partial class GameManager : Node
 			StagePopupInstance.StageMessageString = "You have to hit the Goal of " + CurrentStage.RequiredPoints + "P!\nYou have until Round: " + CurrentStage.EndsAtRound;
 			ItemManager.Instance.AddChild(StagePopupInstance);
 
-			RoundLabel.Text = (CurrentStage.EndsAtRound - Round) + " Round/s untill next stage";
+			RoundLabel.Text = (CurrentStage.EndsAtRound - Round) + "   Round/s left";
 
 			ItemManager.Instance.OnRoundEnd();
 
