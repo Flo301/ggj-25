@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://cprxd5f4mopkw"]
+
+[ext_resource type="Script" path="res://scripts/ui/PopupStageIntro.cs" id="1_hd4ki"]
+[ext_resource type="Texture2D" uid="uid://c2oalybnjdkiu" path="res://sprites/BoxUI/BoxUI.png" id="2_3mhe3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5fml"]
+font_size = 56
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_43wju"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Popup" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hd4ki")
+StageTitleString = "Welcome to Stage X"
+StageMessageString = "The Goal to hit is 1234P!"
+
+[node name="PopupBackground" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.5
+offset_top = -243.5
+offset_right = 225.5
+offset_bottom = 243.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3mhe3")
+region_rect = Rect2(1, 1, 125, 125)
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+
+[node name="StageInfo" type="Control" parent="PopupBackground"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 449.0
+offset_bottom = 485.0
+
+[node name="ButtonContainer" type="BoxContainer" parent="PopupBackground/StageInfo"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -211.5
+offset_top = -120.0
+offset_right = 214.5
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Continue" type="Button" parent="PopupBackground/StageInfo/ButtonContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Continue"
+
+[node name="TitleLabel" type="Label" parent="PopupBackground/StageInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 32.0
+offset_right = 200.0
+offset_bottom = 109.0
+grow_horizontal = 2
+text = "Welcome to Stage X"
+label_settings = SubResource("LabelSettings_d5fml")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MessageLabel" type="Label" parent="PopupBackground/StageInfo/TitleLabel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.5
+offset_top = 63.0
+offset_right = 92.5
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "The Goal to hit is 1234P!"
+label_settings = SubResource("LabelSettings_43wju")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PopupBackground/StageInfo/ButtonContainer/Continue" to="." method="OnOkayPressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=25 format=3 uid="uid://u575fnqn6unq"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="Texture2D" uid="uid://c0wjip37oe0ro" path="res://sprites/Background.png" id="1_s5s26"]
@@ -19,8 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://48l8ex2j52tn" path="res://scenes/items/bumpers/Bumper-legendary.tscn" id="11_i3xnq"]
 [ext_resource type="PackedScene" uid="uid://db2y5hn1smqd8" path="res://scenes/ui/CardSelector.tscn" id="12_gan0x"]
 [ext_resource type="Resource" uid="uid://csarujhejqywu" path="res://resource/stage_1.tres" id="15_jbggw"]
-[ext_resource type="PackedScene" path="res://scenes/ui/PopupBG.tscn" id="16_52xn4"]
+[ext_resource type="PackedScene" uid="uid://c2ckrfqh2cjph" path="res://scenes/ui/PopupWinLoose.tscn" id="16_52xn4"]
 [ext_resource type="Resource" uid="uid://cq5a63rjal105" path="res://resource/stage_2.tres" id="17_uqnxl"]
+[ext_resource type="PackedScene" uid="uid://cprxd5f4mopkw" path="res://scenes/ui/PopupStageIntro.tscn" id="17_w5lkj"]
 [ext_resource type="Resource" uid="uid://ulj231m07icd" path="res://resource/stage_3.tres" id="18_dn0fb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
@@ -46,6 +47,7 @@ Arena = NodePath("../Arena1")
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_ro3y3")
 WinLoosePopup = ExtResource("16_52xn4")
+StageIntroPopup = ExtResource("17_w5lkj")
 GameStages = Array[Resource]([ExtResource("15_jbggw"), ExtResource("17_uqnxl"), ExtResource("18_dn0fb")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
