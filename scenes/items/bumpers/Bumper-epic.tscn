@@ -13,7 +13,7 @@ physics_material_override = ExtResource("1_a0554")
 script = ExtResource("2_7g75o")
 BasePointsOnTrigger = 16
 Rarity = 3
-Description = "is worth 16 points"
+Description = "16P when triggert"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_duixi")

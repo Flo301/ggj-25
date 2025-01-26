@@ -16,7 +16,7 @@ BasePointsOnTrigger = 10
 CooldownInSeconds = 3.0
 ExtraBounce = true
 Rarity = 3
-Description = "10P when triggert, has a higher bounce rate"
+Description = "10P when triggert, has a higher bounce rate, 3s Cooldown"
 MultiplierScene = ExtResource("3_wgrnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
