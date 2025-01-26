@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbixmhvql664m"]
+[gd_scene load_steps=6 format=3 uid="uid://dbixmhvql664m"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="1_j63tu"]
 [ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="2_nlnev"]
 [ext_resource type="Texture2D" uid="uid://cxqwddsxnd1rq" path="res://sprites/items/Algea.png" id="3_jle1q"]
+[ext_resource type="AudioStream" uid="uid://50wcbvyf8uv0" path="res://sounds/bumps_2.tres" id="4_8y87u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
 radius = 15.0
@@ -21,3 +22,7 @@ shape = SubResource("CircleShape2D_duixi")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_jle1q")
+
+[node name="TriggerSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_8y87u")

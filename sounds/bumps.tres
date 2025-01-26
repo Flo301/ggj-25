@@ -1,0 +1,14 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=5 format=3 uid="uid://cj73o5u8udw58"]
+
+[ext_resource type="AudioStream" uid="uid://do45u3lrqirb2" path="res://sounds/resources/BubbleHit_1.mp3" id="1_3l78a"]
+[ext_resource type="AudioStream" uid="uid://dyrd13lyei5ad" path="res://sounds/resources/BubbleHit_2.mp3" id="2_3k4yf"]
+[ext_resource type="AudioStream" uid="uid://bv2hs46p0bnae" path="res://sounds/resources/BubbleHit_3.mp3" id="3_1pest"]
+[ext_resource type="AudioStream" uid="uid://dpbe84aqwhlid" path="res://sounds/resources/BubbleHit_4.mp3" id="4_jko8c"]
+
+[resource]
+random_pitch = 2.0
+streams_count = 4
+stream_0/stream = ExtResource("1_3l78a")
+stream_1/stream = ExtResource("2_3k4yf")
+stream_2/stream = ExtResource("3_1pest")
+stream_3/stream = ExtResource("4_jko8c")

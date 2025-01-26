@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://48l8ex2j52tn"]
+[gd_scene load_steps=6 format=3 uid="uid://48l8ex2j52tn"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="1_qxqs4"]
 [ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="2_dke1d"]
 [ext_resource type="Texture2D" uid="uid://bvctoxcgccpk3" path="res://sprites/items/ItemSlot.png" id="3_3701k"]
+[ext_resource type="AudioStream" uid="uid://50wcbvyf8uv0" path="res://sounds/bumps_2.tres" id="4_sg5ko"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
 radius = 15.0
@@ -21,3 +22,7 @@ shape = SubResource("CircleShape2D_duixi")
 modulate = Color(1, 0.933333, 0, 1)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_3701k")
+
+[node name="TriggerSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_sg5ko")

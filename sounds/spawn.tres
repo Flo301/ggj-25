@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://dchvmadxg30f2"]
+
+[ext_resource type="AudioStream" uid="uid://wb68apal1s4f" path="res://sounds/resources/bubbles.mp3" id="1_y48lh"]
+
+[resource]
+random_pitch = 2.0
+random_volume_offset_db = 0.4
+streams_count = 1
+stream_0/stream = ExtResource("1_y48lh")

@@ -29,11 +29,14 @@ public partial class GridItem : Node2D
 
 	//PROPERTIES
 	private float CurrentCooldown = 0;
+	private AudioStreamPlayer2D TriggerSoundPlayer;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		ItemManager.Instance.AddItem(this);
+		TriggerSoundPlayer = GetNode<AudioStreamPlayer2D>("%TriggerSound");
+
 		base._Ready();
 	}
 
@@ -60,6 +63,11 @@ public partial class GridItem : Node2D
 
 	public virtual void Trigger(Bubble bubble)
 	{
+		if (TriggerSoundPlayer != null)
+		{
+			TriggerSoundPlayer.Play();
+		}
+
 		if (CurrentCooldown > 0f) return;
 
 		CurrentCooldown = CooldownInSeconds;
@@ -104,7 +112,7 @@ public partial class GridItem : Node2D
 			bubble.SetAxisVelocity(Vector2.Down * 300);
 			var oldMask = bubble.CollisionMask;
 			bubble.CollisionMask = 0;
-			GetTree().CreateTimer(1.3f).Timeout += () => {bubble.CollisionMask = oldMask;};
+			GetTree().CreateTimer(1.3f).Timeout += () => { bubble.CollisionMask = oldMask; };
 		}
 	}
 

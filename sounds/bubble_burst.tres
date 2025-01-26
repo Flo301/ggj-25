@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://3883artl15a0"]
+
+[ext_resource type="AudioStream" uid="uid://bku010v8ylyjo" path="res://sounds/resources/Bubbleburst_1.mp3" id="1_kr6n4"]
+[ext_resource type="AudioStream" uid="uid://b1qtm2pbxov7i" path="res://sounds/resources/Bubbleburst_2.mp3" id="2_62w2h"]
+[ext_resource type="AudioStream" uid="uid://6jsrfy4yx6s1" path="res://sounds/resources/Bubbleburst_3.mp3" id="3_sbkhl"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_kr6n4")
+stream_1/stream = ExtResource("2_62w2h")
+stream_2/stream = ExtResource("3_sbkhl")

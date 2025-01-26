@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqknhbi8eo0ai"]
+[gd_scene load_steps=6 format=3 uid="uid://dqknhbi8eo0ai"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="1_p2dw2"]
 [ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="2_aixwk"]
 [ext_resource type="Texture2D" uid="uid://b7b7oebkgxdj6" path="res://sprites/items/Flipper.png" id="3_u2m4v"]
+[ext_resource type="AudioStream" uid="uid://50wcbvyf8uv0" path="res://sounds/bumps_2.tres" id="4_lfust"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_duixi"]
 radius = 15.0
@@ -22,3 +23,9 @@ shape = SubResource("CircleShape2D_duixi")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_u2m4v")
+
+[node name="TriggerSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_lfust")
+volume_db = 6.0
+pitch_scale = 0.7
