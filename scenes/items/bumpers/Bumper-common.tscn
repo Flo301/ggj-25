@@ -12,7 +12,7 @@ radius = 15.0
 physics_material_override = ExtResource("1_qctqw")
 script = ExtResource("2_c3qs0")
 BasePointsOnTrigger = 2
-Description = "is worth 2 points"
+Description = "2P when triggert"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_duixi")
