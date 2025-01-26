@@ -50,6 +50,7 @@ public partial class GameManager : Node
 	private int Points;
 	private int round;
 	private int Round { get => round; set { round = value; } }
+	private int RoundsLeft { get => CurrentStage.EndsAtRound - Round; }
 	public int Stage { get; private set; } = 1;
 	public GameStageResource CurrentStage => Stage <= GameStages.Count() ? GameStages[Stage - 1] : null;
 
@@ -65,6 +66,8 @@ public partial class GameManager : Node
 	{
 		GD.Print("OnRoundEnd");
 		IsRoundActive = false;
+
+		ItemManager.Instance.OnRoundEnd();
 
 		//Stage transition handling
 		if (CurrentStage.EndsAtRound == Round)
@@ -93,20 +96,18 @@ public partial class GameManager : Node
 			//spawn popup
 			PopupStageIntro StagePopupInstance = StageIntroPopup.Instantiate<PopupStageIntro>();
 			StagePopupInstance.StageTitleString = "Welcome to Stage " + Stage;
-			StagePopupInstance.StageMessageString = "You have to hit the Goal of " + CurrentStage.RequiredPoints + "P!\nYou have until Round: " + CurrentStage.EndsAtRound;
+			StagePopupInstance.StageMessageString = "You have to hit the Goal of " + CurrentStage.RequiredPoints +
+			 "P!\nYou have " + RoundsLeft + " Rounds";
 			ItemManager.Instance.AddChild(StagePopupInstance);
 
-			RoundLabel.Text = (CurrentStage.EndsAtRound - Round) + "   Round/s left";
-
-			ItemManager.Instance.OnRoundEnd();
-
 			AddPoints(-Points); //Reset points
-			return;
+		}
+		else
+		{
+			ItemManager.Instance.GetRandomItem();
 		}
 
-		ItemManager.Instance.OnRoundEnd();
-		ItemManager.Instance.GetRandomItem();
-
+		RoundLabel.Text = RoundsLeft + " Round/s left";
 		Round++;
 	}
 
