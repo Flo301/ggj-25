@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GameStageResource" load_steps=2 format=3 uid="uid://csarujhejqywu"]
+
+[ext_resource type="Script" path="res://scripts/resource/GameStageResource.cs" id="1_uieqy"]
+
+[resource]
+script = ExtResource("1_uieqy")
+EndsAtRound = 5
+RequiredPoints = 400

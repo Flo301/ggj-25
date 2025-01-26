@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://uuly487bvq0q"]
+[gd_scene load_steps=5 format=3 uid="uid://dqknhbi8eo0ai"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://chbmn5y8k02ur" path="res://physics/ItemSlotPhysics.tres" id="1_p2dw2"]
 [ext_resource type="Script" path="res://scripts/items/GridItem.cs" id="2_aixwk"]
@@ -11,7 +11,9 @@ radius = 15.0
 physics_material_override = ExtResource("1_p2dw2")
 script = ExtResource("2_aixwk")
 BasePointsOnTrigger = 10
+CooldownInSeconds = 5.0
 ExtraBounce = true
+Rarity = 3
 Description = "10P when triggert, has a higher bounce rate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

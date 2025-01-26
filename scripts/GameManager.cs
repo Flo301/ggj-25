@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class GameManager : Node
 {
@@ -25,6 +26,10 @@ public partial class GameManager : Node
 	}
 	#endregion
 
+	//Config
+	[Export]
+	private GameStageResource[] GameStages;
+
 	//NODES
 	private Label PointLabel;
 	private Label RoundLabel;
@@ -33,13 +38,14 @@ public partial class GameManager : Node
 	//PROPERTIES
 	private bool IsRoundActive = false;
 	private int Points = 0;
-	private int round = 0;
+	private int round = 1;
 	private int Round { get => round; set { RoundLabel.Text = "Round " + value; round = value; } }
+	private int Stage = 0;
+	public GameStageResource CurrentStage => Stage <= GameStages.Count() - 1 ? GameStages[Stage] : null;
 
 	public void StartNextRound()
 	{
 		GD.Print("OnRoundStart");
-		Round++;
 		IsRoundActive = true;
 		BubbleManager.Instance.SpawnBubbles();
 		OnStartSoundPlayer.Play();
@@ -49,13 +55,27 @@ public partial class GameManager : Node
 	{
 		GD.Print("OnRoundEnd");
 		IsRoundActive = false;
+
+		if (CurrentStage.EndsAtRound == Round)
+		{
+			if (CurrentStage.RequiredPoints > Points)
+			{
+				//LOST
+				return;
+			}
+			Stage++;
+			AddPoints(-Points); //Reset points
+		}
+
 		ItemManager.Instance.OnRoundEnd();
 		ItemManager.Instance.GetRandomItem();
+
+		Round++;
 	}
 
 	public void AddPoints(int amount)
 	{
 		Points += amount;
-		PointLabel.Text = Points + "P";
+		PointLabel.Text = Points + "P / " + CurrentStage.RequiredPoints + "P";
 	}
 }
