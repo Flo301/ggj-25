@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=20 format=3 uid="uid://u575fnqn6unq"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="Texture2D" uid="uid://c0wjip37oe0ro" path="res://sprites/Background.png" id="1_s5s26"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://wb68apal1s4f" path="res://sounds/bubbles.mp3" id="9_swlcw"]
 [ext_resource type="PackedScene" uid="uid://2otq4pdukxp5" path="res://scenes/items/GridItemRarities/GridItem-epic.tscn" id="10_62w3o"]
 [ext_resource type="PackedScene" uid="uid://48l8ex2j52tn" path="res://scenes/items/GridItemRarities/GridItem-legendary.tscn" id="11_i3xnq"]
+[ext_resource type="Resource" uid="uid://csarujhejqywu" path="res://resource/stage_1.tres" id="15_jbggw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0lfbj"]
 font_size = 60
@@ -39,6 +40,7 @@ Arena = NodePath("../Arena1")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_ro3y3")
+GameStages = Array[Resource]([ExtResource("15_jbggw")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
