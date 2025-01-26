@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2ckrfqh2cjph"]
+
+[ext_resource type="Texture2D" uid="uid://c2oalybnjdkiu" path="res://sprites/BoxUI/BoxUI.png" id="1_d0854"]
+[ext_resource type="Texture2D" uid="uid://dkna7ke3rh60x" path="res://sprites/circleArrow.png" id="2_cjrad"]
+[ext_resource type="Script" path="res://scripts/ui/PopupWinLoose.cs" id="2_ebjs6"]
+[ext_resource type="Texture2D" uid="uid://cwk1y4nm1bnmf" path="res://sprites/Exit.png" id="3_w66yh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d5fml"]
+font_size = 56
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_43wju"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Popup" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ebjs6")
+WinTitleString = "You have Won!"
+WinMessageString = "Would you like to play again?"
+LooseTitleString = "You have Lost :("
+LooseMessageString = "Better Luck next time!"
+
+[node name="PopupBackground" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.5
+offset_top = -243.5
+offset_right = 427.5
+offset_bottom = 243.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_d0854")
+region_rect = Rect2(1, 1, 125, 125)
+patch_margin_left = 21
+patch_margin_top = 21
+patch_margin_right = 21
+patch_margin_bottom = 21
+
+[node name="WinLoose" type="Control" parent="PopupBackground"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonContainer" type="BoxContainer" parent="PopupBackground/WinLoose"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 99.5
+offset_top = 300.0
+offset_right = 715.5
+offset_bottom = 372.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 300
+
+[node name="Play Again" type="Button" parent="PopupBackground/WinLoose/ButtonContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Play Again
+"
+icon = ExtResource("2_cjrad")
+
+[node name="Quit" type="Button" parent="PopupBackground/WinLoose/ButtonContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Quit Game"
+icon = ExtResource("3_w66yh")
+
+[node name="TitleLabel" type="Label" parent="PopupBackground/WinLoose"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 207.5
+offset_top = 33.0
+offset_right = 607.5
+offset_bottom = 110.0
+grow_horizontal = 2
+text = "You have Won!"
+label_settings = SubResource("LabelSettings_d5fml")
+horizontal_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="PopupBackground/WinLoose/TitleLabel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 25.0
+offset_right = 20.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Would you like to play again?"
+label_settings = SubResource("LabelSettings_43wju")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="PopupBackground/WinLoose/ButtonContainer/Play Again" to="." method="OnReplayPressed"]
+[connection signal="pressed" from="PopupBackground/WinLoose/ButtonContainer/Quit" to="." method="OnExitPressed"]

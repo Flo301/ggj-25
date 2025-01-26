@@ -1,10 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://u575fnqn6unq"]
+[gd_scene load_steps=24 format=3 uid="uid://u575fnqn6unq"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.cs" id="1_ro3y3"]
 [ext_resource type="Texture2D" uid="uid://c0wjip37oe0ro" path="res://sprites/Background.png" id="1_s5s26"]
 [ext_resource type="PackedScene" uid="uid://by1vuvdghlhku" path="res://scenes/Bubble.tscn" id="2_6hccx"]
 [ext_resource type="PackedScene" uid="uid://dbixmhvql664m" path="res://scenes/items/Algae.tscn" id="3_ft2sf"]
-[ext_resource type="PackedScene" uid="uid://b2chqf6ajvgy8" path="res://scenes/items/SeaUrchin.tscn" id="3_w2vqd"]
+[ext_resource type="PackedScene" path="res://scenes/items/SeaUrchin.tscn" id="3_w2vqd"]
 [ext_resource type="Script" path="res://scripts/ItemManager.cs" id="5_6rv6y"]
 [ext_resource type="PackedScene" uid="uid://dqknhbi8eo0ai" path="res://scenes/items/Flipper.tscn" id="5_h47o7"]
 [ext_resource type="Script" path="res://scripts/BubbleManager.cs" id="6_e4227"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://48l8ex2j52tn" path="res://scenes/items/bumpers/Bumper-legendary.tscn" id="11_i3xnq"]
 [ext_resource type="PackedScene" uid="uid://db2y5hn1smqd8" path="res://scenes/ui/CardSelector.tscn" id="12_gan0x"]
 [ext_resource type="Resource" uid="uid://csarujhejqywu" path="res://resource/stage_1.tres" id="15_jbggw"]
+[ext_resource type="PackedScene" uid="uid://c2ckrfqh2cjph" path="res://scenes/ui/PopupBG.tscn" id="16_52xn4"]
 [ext_resource type="Resource" uid="uid://cq5a63rjal105" path="res://resource/stage_2.tres" id="17_uqnxl"]
 [ext_resource type="Resource" uid="uid://ulj231m07icd" path="res://resource/stage_3.tres" id="18_dn0fb"]
 
@@ -44,6 +45,7 @@ Arena = NodePath("../Arena1")
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_ro3y3")
+WinLoosePopup = ExtResource("16_52xn4")
 GameStages = Array[Resource]([ExtResource("15_jbggw"), ExtResource("17_uqnxl"), ExtResource("18_dn0fb")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
