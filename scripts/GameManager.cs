@@ -46,7 +46,7 @@ public partial class GameManager : Node
 	private int Points;
 	private int round;
 	private int Round { get => round; set { RoundLabel.Text = "Round " + value; round = value; } }
-	public int Stage { get; private set; }
+	public int Stage { get; private set; } = 1;
 	public GameStageResource CurrentStage => Stage <= GameStages.Count() ? GameStages[Stage - 1] : null;
 
 	public void StartNextRound()
