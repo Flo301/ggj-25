@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_uieqy")
-EndsAtRound = 1
-RequiredPoints = 10
+EndsAtRound = 5
+RequiredPoints = 400
