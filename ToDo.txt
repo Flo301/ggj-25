@@ -56,3 +56,4 @@ Item-Ideen:
 => Blasen-Explosion: Consumed 3 Bubbles und spawnt dann 6 Bubbles, Cooldown
 => Vergolder: Ein Multiplikatorbonis auf die Bubble, Cooldown (macht bubble Golden?)
 => Teleporter: setzt Bubble wieder an Start zurück, sehr hoher Cooldown
+=> Bubblometer: Für jede in dieser Runde gespawnte Blase erhöht sich der Multiplikator, reset am ende der Runde. (Synergy mit BubbleSpawner)

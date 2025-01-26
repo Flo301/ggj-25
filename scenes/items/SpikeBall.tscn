@@ -10,10 +10,10 @@ radius = 15.0
 [node name="Spikeball" type="StaticBody2D"]
 physics_material_override = ExtResource("1_7gfqc")
 script = ExtResource("2_o3tmd")
-BasePointsOnTrigger = 150
+BasePointsOnTrigger = 50
 ConsumeBubble = true
 Rarity = 1
-Description = "150P when triggert, consums the bubble"
+Description = "50P when triggert, consums the bubble"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_duixi")
