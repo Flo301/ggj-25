@@ -38,12 +38,11 @@ ART
  * nach jeder Stage gibt es ein Upgrade
 
 NEXT:
-[ ] Stage UI - Intro Stage(OK), Loose(Try Again, Quit), Win(Play Again, Quit)
-[ ] Overlay UI - Rounds until next Stage
-[ ] Bumper sounds
-[ ] Item sounds
-[ ] Multiplikator Anzeigebadge für die GridItems
-[ ] Items auf Cooldown visualisieren
+[R] Stage UI - Intro Stage(OK), Loose(Try Again, Quit), Win(Play Again, Quit)
+[R] Overlay UI - Rounds until next Stage
+[F] Bumper sounds / Item sounds
+[F] Multiplikator Anzeigebadge für die GridItems
+[F] Items auf Cooldown visualisieren
 
 V2:
 [ ] Item gewichtung nach Seletenheit und Stage
