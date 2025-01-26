@@ -13,7 +13,8 @@ public partial class BubbleManager : Node
 	{
 		if (Instance != null)
 		{
-			throw new Exception("Singleton already instantiated");
+			//ToDo: this makes problems by reload game :(
+			GD.PrintErr("Singleton already instantiated");
 		}
 		Instance = this;
 	}

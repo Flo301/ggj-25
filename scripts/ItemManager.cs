@@ -13,7 +13,8 @@ public partial class ItemManager : Node
 	{
 		if (Instance != null)
 		{
-			throw new Exception("Singleton already instantiated");
+			//ToDo: this makes problems by reload game :(
+			GD.PrintErr("Singleton already instantiated");
 		}
 		Instance = this;
 	}
@@ -31,7 +32,7 @@ public partial class ItemManager : Node
 	public void GetRandomItem()
 	{
 		Dictionary<PackedScene, GridItem> matchTable = new Dictionary<PackedScene, GridItem>();
-		AvailableItems.ToList().ForEach(x => matchTable.Add(x,x.Instantiate<GridItem>()));
+		AvailableItems.ToList().ForEach(x => matchTable.Add(x, x.Instantiate<GridItem>()));
 
 		//roll random items
 		var rngItems = matchTable

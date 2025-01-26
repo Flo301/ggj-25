@@ -12,7 +12,8 @@ public partial class GameManager : Node
 	{
 		if (Instance != null)
 		{
-			throw new Exception("Singleton already instantiated");
+			//ToDo: this makes problems by reload game :(
+			GD.PrintErr("Singleton already instantiated");
 		}
 		Instance = this;
 
@@ -94,9 +95,9 @@ public partial class GameManager : Node
 			StagePopupInstance.StageTitleString = "Welcome to Stage " + Stage;
 			StagePopupInstance.StageMessageString = "You have to hit the Goal of " + CurrentStage.RequiredPoints + "P!\nYou have until Round: " + CurrentStage.EndsAtRound;
 			ItemManager.Instance.AddChild(StagePopupInstance);
-			
+
 			RoundLabel.Text = (CurrentStage.EndsAtRound - Round) + " Round/s untill next stage";
-			
+
 			ItemManager.Instance.OnRoundEnd();
 
 			AddPoints(-Points); //Reset points
