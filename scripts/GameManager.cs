@@ -19,7 +19,7 @@ public partial class GameManager : Node
 		PointLabel = GetNode<Label>("%PointLabel");
 		RoundLabel = GetNode<Label>("%RoundLabel");
 		OnStartSoundPlayer = GetNode<AudioStreamPlayer2D>("%RoundStartPlayer");
-		Round = 0;
+		Round = 1;
 		AddPoints(0);
 
 		ItemManager.Instance.GetRandomItem();
@@ -37,8 +37,8 @@ public partial class GameManager : Node
 
 	//PROPERTIES
 	private bool IsRoundActive = false;
-	private int Points = 0;
-	private int round = 1;
+	private int Points;
+	private int round;
 	private int Round { get => round; set { RoundLabel.Text = "Round " + value; round = value; } }
 	private int Stage = 0;
 	public GameStageResource CurrentStage => Stage <= GameStages.Count() - 1 ? GameStages[Stage] : null;

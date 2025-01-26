@@ -1,4 +1,5 @@
 using Godot;
+using Godot.NativeInterop;
 using System;
 
 public partial class GridItem : Node2D
@@ -9,7 +10,34 @@ public partial class GridItem : Node2D
 	[Export]
 	public int BasePointsOnTrigger { get; protected set; } = 1;
 	[Export]
-	public float Multiplier { get; protected set; } = 1f;
+	private float multiplier = 1f;
+	public float Multiplier
+	{
+		get => multiplier;
+		set
+		{
+			multiplier = value;
+
+			if (value != 1)
+			{
+				if (MultiplierScene == null)
+				{
+					GD.PrintErr("missing MultiplierScene for " + Name);
+					return;
+				}
+
+				//spawn label if required
+				if (MultiplierLabel == null)
+				{
+					var obj = MultiplierScene.Instantiate<Control>();
+					AddChild(obj);
+					MultiplierLabel = obj.GetNode<Label>("%Label");
+				}
+				MultiplierLabel.Text = "x" + value;
+			}
+		}
+	}
+
 	[Export]
 	public bool ConsumeBubble { get; protected set; } = false;
 	[Export]
@@ -26,10 +54,14 @@ public partial class GridItem : Node2D
 	public ERarity Rarity { get; protected set; } = ERarity.COMMON;
 	[Export]
 	public string Description { get; protected set; } = "";
+	[Export]
+	//ToDo: this should maybe be a global resource
+	private PackedScene MultiplierScene;
 
 	//PROPERTIES
 	private float CurrentCooldown = 0;
 	private AudioStreamPlayer2D TriggerSoundPlayer;
+	private Label MultiplierLabel;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
